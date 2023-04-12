@@ -17,7 +17,7 @@ Use case 2: Prof. Edwards is giving a TED talk style presentation. This scrollin
 Map Features
 | # | Short Name | Data Creation | Representation |
 | ------------- | ------------- | ------------- | ------------- |
-| 1  | Basemap  |   | A leaflet basemap with a hand drawn aesthetic for the backdrop of the continents  |
+| 1  | Basemap  | n/a | A leaflet basemap with a hand drawn aesthetic for the backdrop of the continents  |
 | 2  | Continents | Hand-drawn continent outlines, digitized (10) Assigned coordinates to an arbitrary location.  | “Organic” shapes, minimal  |
 | 3  | Regions  | Hand-drawn region on each continent  | “Organic” lines, topologically within continents. Blurred lines represent ambivalent boundaries  |
 | 4  | Governing Bodies  | Rectangle polygon layer (5)  | 5 blurred areas underneath the other map features. A color spectrum: body→brain→mind→heart→soul  |
@@ -35,12 +35,12 @@ Interaction
 
 3. Wireframes
 
-![plot](.img\wireframes\map_sketch.JPG)
-![plot](.img\wireframes\wf1.JPG)
-![plot](.img\wireframes\wf2.JPG)
-![plot](.img\wireframes\wf3.JPG)
-![plot](.img\wireframes\wf4.JPG)
-![plot](.img\wireframes\wf5.JPG)
-![plot](.img\wireframes\wf6.JPG)
-![plot](.img\wireframes\wf7.JPG)
-![plot](.img\wireframes\wf8.JPG)
+![full map sketch](.img/wireframes/map_sketch.JPG)
+![wireframe 1](.img/wireframes/wf1.JPG)
+![wireframe 2](.img/wireframes/wf2.JPG)
+![wireframe 3](.img/wireframes/wf3.JPG)
+![wireframe 4](.img/wireframes/wf4.JPG)
+![wireframe 5](.img/wireframes/wf5.JPG)
+![wireframe 6](.img/wireframes/wf6.JPG)
+![wireframe 7](.img/wireframes/wf7.JPG)
+![wireframe 8](.img/wireframes/wf8.JPG)
