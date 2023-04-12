@@ -35,9 +35,9 @@ Interaction
 
 3. Wireframes
 
-![full map sketch](.img/wireframes/map_sketch.JPG)
-![wireframe 1](.img/wireframes/wf1.JPG)
-![wireframe 2](.img/wireframes/wf2.JPG)
+![full map sketch](img/wireframes/map_sketch.JPG)
+![wireframe 1](img/wireframes/wf1.JPG)
+![wireframe 2](img/wireframes/wf2.JPG)
 ![wireframe 3](.img/wireframes/wf3.JPG)
 ![wireframe 4](.img/wireframes/wf4.JPG)
 ![wireframe 5](.img/wireframes/wf5.JPG)
