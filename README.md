@@ -14,15 +14,16 @@ Upon arriving at the Continents of the Mind, the user, Bart, a psychology studen
 Use case 2: Prof. Edwards is giving a TED talk style presentation. This scrolling website is used as a backdrop to accompany his talk and help facilitate the communication of his work.
 
 2. Requirements Document
+
 Map Features
-| # | Short Name | Data Creation | Representation |
-| ------------- | ------------- | ------------- | ------------- |
-| 1  | Basemap  | n/a | A leaflet basemap with a hand drawn aesthetic for the backdrop of the continents  |
-| 2  | Continents | Hand-drawn continent outlines, digitized (10) Assigned coordinates to an arbitrary location.  | “Organic” shapes, minimal  |
-| 3  | Regions  | Hand-drawn region on each continent  | “Organic” lines, topologically within continents. Blurred lines represent ambivalent boundaries  |
-| 4  | Governing Bodies  | Rectangle polygon layer (5)  | 5 blurred areas underneath the other map features. A color spectrum: body→brain→mind→heart→soul  |
-| 5  | Everything/Nothing  | Rectangle polygon layer (2)  | These two polygons will be visually part of the color spectrum from “governing bodies” Everything on the far left (white) nothing on the far right (black)  |
-| 6  | Discipline  | Point layer (10) surrounding the map  | Text labels only  |
+| # | Short Name | Data Creation + Representation |
+| ------------- | ------------- | ------------- |
+| 1  | Basemap  |  A leaflet basemap with a hand drawn aesthetic for the backdrop of the continents  |
+| 2  | Continents | Hand-drawn continent outlines, digitized (10) Assigned coordinates to an arbitrary location.   “Organic” shapes, minimal  |
+| 3  | Regions  | Hand-drawn region on each continent. “Organic” lines, topologically within continents. Blurred lines represent ambivalent boundaries  |
+| 4  | Governing Bodies  | Rectangle polygon layer (5). 5 blurred areas underneath the other map features. A color spectrum: body→brain→mind→heart→soul  |
+| 5  | Everything/Nothing  | Rectangle polygon layer (2). These two polygons will be visually part of the color spectrum from “governing bodies” Everything on the far left (white) nothing on the far right (black)  |
+| 6  | Discipline  | Point layer (10) surrounding the map. Text labels only  |
 
 Interaction
 | # | Short Name | Description |
@@ -38,9 +39,9 @@ Interaction
 ![full map sketch](img/wireframes/map_sketch.JPG)
 ![wireframe 1](img/wireframes/wf1.JPG)
 ![wireframe 2](img/wireframes/wf2.JPG)
-![wireframe 3](.img/wireframes/wf3.JPG)
-![wireframe 4](.img/wireframes/wf4.JPG)
-![wireframe 5](.img/wireframes/wf5.JPG)
-![wireframe 6](.img/wireframes/wf6.JPG)
-![wireframe 7](.img/wireframes/wf7.JPG)
-![wireframe 8](.img/wireframes/wf8.JPG)
+![wireframe 3](img/wireframes/wf3.JPG)
+![wireframe 4](img/wireframes/wf4.JPG)
+![wireframe 5](img/wireframes/wf5.JPG)
+![wireframe 6](img/wireframes/wf6.JPG)
+![wireframe 7](img/wireframes/wf7.JPG)
+![wireframe 8](img/wireframes/wf8.JPG)
