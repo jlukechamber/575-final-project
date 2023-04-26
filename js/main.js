@@ -1,4 +1,5 @@
 //// array containing locations
+//actually do we even need this because the places array is redone in the fly variable? 
 function createArray(lat,long){
     //var ??  places for now 
     var places = [
@@ -69,22 +70,22 @@ function createLocationMap(){
     };
 //declare map variable 
 var map;
-var minValue;
-var dataStats = {};
+
 
 //step 1 create map
 function createMap() {
 
     //create the map (L. is leaflet)
     map = L.map('mapid', {
-        center: [20.614399, 70.926953],
-        zoom: 1,
+        center: [-152.4691482, 36.1755150],
+        zoom: 9,
         //set zoom level constraints
         //THIS WILL NEED TO CHANGE
-        minZoom: 2,
-        maxZoom: 5
+        minZoom: 9,
+        maxZoom: 15
         //add panning constraints
         // set panning constraint
+        //we need to set panning constraints
 
     });
 
@@ -94,11 +95,11 @@ function createMap() {
 //     }).addTo(map);
 
 //     //call getData function
-//     getData();
+    getData();
  };
 
 
-// Import GeoJSON data
+//import GeoJSON data
 function getData() {
     //load the data
     fetch("data/mind_continents.geojson")
@@ -116,6 +117,74 @@ function getData() {
 
         // })
 };
+
+// create array containing flyTo locations
+//should this 
+var fly= [
+        {
+            id: "mBody",
+            location:[-154.1422696, 35.7988407],
+            zoom: 9
+        },
+        {
+            id: "Conciousness",
+            location:[-153.4242405, 36.1905128],
+            zoom: 9
+        },
+        {
+            id: "Subjectivity",
+            location:[-152.6586802,36.7255401],
+            zoom: 9
+        },
+        {
+            id: "Ego",
+            location: [-151.6775737,36.4988286],
+            zoom: 9
+        },
+        {
+            id: "Antiego",
+            location: [-151.1275595, 35.9832893],
+            zoom: 9
+        },
+        {
+            id: "Other",
+            location: [-151.1461410,35.4613327],
+            zoom: 9 
+        },
+        {
+            id: "Will",
+            location: [-151.5809496,35.7875796],
+            zoom: 9
+        },
+        {
+         id: 'Freendom',
+         location: [-152.4691482, 36.1755150],
+         zoom: 9   
+        },
+        {
+            id: "Unconsciousness",
+            location: [-153.3573469,35.5006736],
+            zoom: 9
+        },
+        {
+            id: "Objectivity",
+            location: [-152.5100277,35.6125384],
+            zoom: 9
+        }
+    ];
+
+
+// function to trigger flyTo on scroll
+function scroll(){
+    fly.forEach(function(item){
+        isInPosition(item.id, item.location, item.zoom)
+    });
+};
+
+
+
+
+
 
 (function(){
     //calculate inline position of a right element 
