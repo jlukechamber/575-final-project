@@ -56,6 +56,57 @@ function createArray(lat,long){
 }
 
 
+//declare map variable 
+var map;
+var minValue;
+var dataStats = {};
+
+//step 1 create map
+function createMap() {
+
+    //create the map (L. is leaflet)
+    map = L.map('mapid', {
+        center: [20.614399, 70.926953],
+        zoom: 1,
+        //set zoom level constraints
+        //THIS WILL NEED TO CHANGE
+        minZoom: 2,
+        maxZoom: 5
+        //add panning constraints
+        // set panning constraint
+
+    });
+
+
+//     //add OSM base tilelayer
+//     L.tileLayer('https://api.mapbox.com/styles/v1/randimaes/cleq9kh7c000q01lmxdwexoou/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA', {
+//         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+//     }).addTo(map);
+
+//     //call getData function
+//     getData();
+ };
+
+
+// Import GeoJSON data
+function getData() {
+    //load the data
+    fetch("data/mind_continents.geojson")
+        .then(function (response) {
+            return response.json();
+        })
+        // .then(function (json) {
+        //     var attributes = processData(json);
+        //     console.log(attributes)
+        //     minValue = calculateMinValue(json);
+        //     //call function to create proportional symbols
+        //     createPropSymbols(json, attributes);
+        //     createSequenceControls(attributes);
+        //     createLegend(attributes);
+
+        // })
+};
+
 (function(){
     //calculate inline position of a right element 
     function rightPosition(){
