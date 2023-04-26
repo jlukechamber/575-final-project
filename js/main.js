@@ -55,6 +55,17 @@ function createArray(lat,long){
     ];
 }
 
+// create location map
+function createLocationMap(){
+    locationMap = L.map('locationMap',{
+        center: [39,-96],
+        zoom: 5,
+        maxZoom: 12,
+        minZoom: 5,
+        scrollWheelZoom: false,
+        zoomControl: false});
+} //this is here for now so we do not have an error but should be moved to the bottom of the code
+
 
 (function(){
     //calculate inline position of a right element 
