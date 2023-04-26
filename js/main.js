@@ -58,15 +58,15 @@ function createArray(lat,long){
 // create location map
 function createLocationMap(){
     locationMap = L.map('locationMap',{
-        center: [39,-96],
+        center: [-152.4691482, 36.1755150],
         zoom: 5,
         maxZoom: 12,
         minZoom: 5,
         scrollWheelZoom: false,
         zoomControl: false});
-} //this is here for now so we do not have an error but should be moved to the bottom of the code
 
 
+    };
 //declare map variable 
 var map;
 var minValue;
@@ -87,7 +87,6 @@ function createMap() {
         // set panning constraint
 
     });
-
 
 //     //add OSM base tilelayer
 //     L.tileLayer('https://api.mapbox.com/styles/v1/randimaes/cleq9kh7c000q01lmxdwexoou/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA', {
