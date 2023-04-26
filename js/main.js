@@ -56,10 +56,10 @@ function createArray(lat,long){
     ];
 }
 
-// create location map
-function createLocationMap(){
+// create location map --> this will be used for flyover?? Do we need this chuck of code?
+/*function createLocationMap(){
     locationMap = L.map('locationMap',{
-        center: [-152.4691482, 36.1755150],
+        center: [36.1905128,-153.4242405],
         zoom: 5,
         maxZoom: 12,
         minZoom: 5,
@@ -70,6 +70,7 @@ function createLocationMap(){
     };
 //declare map variable 
 var map;
+*/
 
 
 //step 1 create map
@@ -82,17 +83,12 @@ function createMap() {
         //set zoom level constraints
         //THIS WILL NEED TO CHANGE
         minZoom: 9,
-        maxZoom: 3
+        maxZoom: 1
         //add panning constraints
         // set panning constraint
         //we need to set panning constraints
 
     });
-
-//     //add OSM base tilelayer
-//     L.tileLayer('https://api.mapbox.com/styles/v1/randimaes/cleq9kh7c000q01lmxdwexoou/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA', {
-//         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-//     }).addTo(map);
 
 //     //call getData function
     getData();
@@ -181,6 +177,81 @@ var fly= [
         }
     ];
 
+    function scrollLocation(){
+        locations.forEach(function(item){
+            locatorIsInPosition(item.id, item.location, item.zoom)
+        });
+    };
+    
+    function locatorIsInPosition(id, location, zoom){
+        
+        // get element and element's property 'top'
+        var locText = document.getElementById(id);
+        var rect = locText.getBoundingClientRect();
+        y = rect.top;
+    
+        // set the top margin as a ratio of innerHeight
+        var topMargin = window.innerHeight / 2;
+    
+        // call flyTo when top of element is halfway up innerHeight
+        if ((y-topMargin) < 0 && y > 0){
+            locationMap.flyTo(location, zoom, {
+                animate: true,
+                duration: 2 // in seconds
+            });
+        };
+    };
+   
+    //this section of code  creates the full map at end of the scroll ****Copied from Jake's code with minor edits
+   /* function createFinalMap(){
+        //create the map
+        finalMap = L.map('finalMap', {
+            //map parameters
+            center: [36.1905128,-153.4242405],
+            zoom: 5,
+            maxZoom: 12,
+            minZoom: 5,
+            scrollWheelZoom: false,
+            //needed to get rid zoom in order to move it 
+            zoomControl:false,
+            //constrain pan to data
+            maxBounds: [
+                [60, -155],
+                [15, -45]
+                ],
+        });
+    
+        // add zoom with home button
+        var zoomHome = L.Control.zoomHome({position:'bottomright'});
+        zoomHome.addTo(finalMap);
+    
+    
+        //call getData function
+        getData();
+    };
+    //function to retrieve the data
+function getData(){
+    //adds the IDA points layer
+    fetch("data/mind_continents.geojson)
+        .then(function(response){
+            return response.json();
+        })        
+        .then(function(json){
+            //create a Leaflet GeoJSON layer and add it to the map
+            IDApoints = L.geoJson(json,{
+                //creates IDA pop ups
+                onEachFeature:function(feature, layer){
+                    var popupContent = createPopupContent(feature);
+                    layer.bindPopup(popupContent)
+                },
+                //convert the IDA data from points to layers to give us more symbology control
+                pointToLayer: pointToLayer
+            }).addTo(finalMap);
+            //call the style function within the Leaflet setStyle funciton, dynamically changing the IDA point style based on where the user is in the page
+            IDApoints.setStyle(style);
+        });
+};
+*/
 
 // function to trigger flyTo on scroll
 function scroll(){
