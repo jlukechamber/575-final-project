@@ -1,6 +1,6 @@
 //// array containing locations
 //actually do we even need this because the places array is redone in the fly variable? 
-function createArray(lat,long){
+/*function createArray(lat,long){
     //var ??  places for now 
     var places = [
         {
@@ -54,7 +54,7 @@ function createArray(lat,long){
             zoom: 9
         }
     ];
-
+/*
 
 // create location map --> this will be used for flyover?? Do we need this chuck of code?
 /* function createLocationMap(){
@@ -71,7 +71,6 @@ function createArray(lat,long){
 //declare map variable 
 var map;
 */
-};
 //step 1 create map
 function createMap() {
 
@@ -86,7 +85,7 @@ function createMap() {
     )};
 
     getData();
-    
+
 //import GeoJSON data
 function getData() {
     //load the data
@@ -116,57 +115,57 @@ function getData() {
 
 // create array containing flyTo locations
 var fly= [
-        {
-            id: "mBody",
-            location:[-154.1422696, 35.7988407],
-            zoom: 9
-        },
-        {
-            id: "Conciousness",
-            location:[-153.4242405, 36.1905128],
-            zoom: 9
-        },
-        {
-            id: "Subjectivity",
-            location:[-152.6586802,36.7255401],
-            zoom: 9
-        },
-        {
-            id: "Ego",
-            location: [-151.6775737,36.4988286],
-            zoom: 9
-        },
-        {
-            id: "Antiego",
-            location: [-151.1275595, 35.9832893],
-            zoom: 9
-        },
-        {
-            id: "Other",
-            location: [-151.1461410,35.4613327],
-            zoom: 9 
-        },
-        {
-            id: "Will",
-            location: [-151.5809496,35.7875796],
-            zoom: 9
-        },
-        {
-         id: 'Freendom',
-         location: [-152.4691482, 36.1755150],
-         zoom: 9   
-        },
-        {
-            id: "Unconsciousness",
-            location: [-153.3573469,35.5006736],
-            zoom: 9
-        },
-        {
-            id: "Objectivity",
-            location: [-152.5100277,35.6125384],
-            zoom: 9
-        }
-    ];
+    {
+        id: "mBody",
+        location:[-154.1422696, 35.7988407],
+        zoom: 9
+    },
+    {
+        id: "Conciousness",
+        location:[-153.4242405, 36.1905128],
+        zoom: 9
+    },
+    {
+        id: "Subjectivity",
+        location:[-152.6586802,36.7255401],
+        zoom: 9
+    },
+    {
+        id: "Ego",
+        location: [-151.6775737,36.4988286],
+        zoom: 9
+    },
+    {
+        id: "Antiego",
+        location: [-151.1275595, 35.9832893],
+        zoom: 9
+    },
+    {
+        id: "Other",
+        location: [-151.1461410,35.4613327],
+        zoom: 5
+    },
+    {
+        id: "Will",
+        location: [-151.5809496,35.7875796],
+        zoom: 4
+    },
+    {
+     id: 'Freendom',
+     location: [-152.4691482, 36.1755150],
+     zoom: 3  
+    },
+    {
+        id: "Unconsciousness",
+        location: [-153.3573469,35.5006736],
+        zoom: 6
+    },
+    {
+        id: "Objectivity",
+        location: [-152.5100277,35.6125384],
+        zoom: 10
+    }
+];
     function scroll(){
         fly.forEach(function(item){
             isInPosition(item.id, item.location, item.zoom, item.scrollLocation)
@@ -185,41 +184,36 @@ var fly= [
     
         // call flyTo when top of element is halfway up innerHeight
         if ((y-topMargin) < 0 && y > 0){
-            sliderMap.flyTo(location, zoom, {
+            map.flyTo(location, zoom, {
                 animate: true,
                 duration: 2 // in seconds
             });
         };
     };
 
-// I am not sure if this function should be directly below the fly array or the places array
-    function scrollLocation(){
-        locations.forEach(function(item){
-            locatorIsInPosition(item.id, item.location, item.zoom)
-        });
-    };
-    
-    function locatorIsInPosition(id, location, zoom){
-        
-        // get element and element's property 'top'
-        var locText = document.getElementById(id);
-        var rect = locText.getBoundingClientRect();
-        y = rect.top;
-    
-        // set the top margin as a ratio of innerHeight
-        var topMargin = window.innerHeight / 2;
-    
-        // call flyTo when top of element is halfway up innerHeight
-        if ((y-topMargin) < 0 && y > 0){
-            locationMap.flyTo(location, zoom, {
-                animate: true,
-                duration: 2 // in seconds
-            });
-        };
-    };
-    // function to trigger flyTo on scroll
+// function to trigger image switch on scroll
+//caught TypeError: Cannot read properties of null (reading 'getBoundingClientRect') at isInPosition (main.js:179:26) at main.js:270:9 at Array.forEach (<anonymous>) at HTMLDocument.scroll (main.js:269:9)
+function mapScroll(){
+    map.forEach(function(item){
+        isInPosition(item.id)
+    });
+};
+ //console log not working- error here   
+function mapIsInPosition(id){   
+    // get element and element's property 'top'
+    var mBody = document.getElementById(id);
+    var rect = mBody.getBoundingClientRect();
+    console.log("sup")
+    y = rect.top;
 
-   
+    // set the top margin as a ratio of innerHeight
+    var topMargin = window.innerHeight / 2;
+
+    // change image when top of element is halfway up innerHeight
+    if ((y-topMargin) < 0 && y > 0){
+        document.querySelector("map").id
+    };
+};
     //this section of code  creates the full map at end of the scroll ****Copied from Jake's code with minor edits
    /* function createFinalMap(){
         //create the map
@@ -271,11 +265,13 @@ function getData(){
 };
 */
 
-
 // function to trigger flyTo on scroll
 function scroll(){
     fly.forEach(function(item){
         isInPosition(item.id, item.location, item.zoom)
     });
 };
-createMap()
+createMap();
+
+document.addEventListener('scroll', scroll)
+document.addEventListener('scroll', mapScroll)
