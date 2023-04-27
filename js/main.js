@@ -57,7 +57,7 @@ function createArray(lat,long){
 
 
 // create location map --> this will be used for flyover?? Do we need this chuck of code?
-function createLocationMap(){
+/* function createLocationMap(){
     locationMap = L.map('map',{
         center: [36.1905128,-153.4242405],
         zoom: 2,
@@ -70,9 +70,8 @@ function createLocationMap(){
     };
 //declare map variable 
 var map;
+*/
 };
-
-
 //step 1 create map
 function createMap() {
 
@@ -87,8 +86,7 @@ function createMap() {
     )};
 
     getData();
-
-
+    
 //import GeoJSON data
 function getData() {
     //load the data
