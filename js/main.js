@@ -54,10 +54,10 @@ function createArray(lat,long){
             zoom: 9
         }
     ];
-}
+
 
 // create location map --> this will be used for flyover?? Do we need this chuck of code?
-/*function createLocationMap(){
+function createLocationMap(){
     locationMap = L.map('locationMap',{
         center: [36.1905128,-153.4242405],
         zoom: 5,
@@ -70,7 +70,8 @@ function createArray(lat,long){
     };
 //declare map variable 
 var map;
-*/
+};
+
 
 
 //step 1 create map
@@ -90,10 +91,31 @@ function createMap() {
 
     });
 
-//     //call getData function
+//call getData function
     getData();
  };
+// get user location if user selects yes button
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(saveLocation);
+    };
+};
 
+// set lat long if user denies location access or does not click either button
+function noLocation() { 
+    var lat = 39.71;
+    var long = -105.06;
+    locations = createArray(lat, long);
+    scrollLocation(null, locations);
+};
+
+// set lat long if user allows location access
+function saveLocation(position) {
+    var lat = position.coords.latitude;
+    var long = position.coords.longitude;
+    locations = createArray(lat, long);
+    scrollLocation(null, locations);
+};
 
 //import GeoJSON data
 function getData() {
@@ -176,10 +198,35 @@ var fly= [
             zoom: 9
         }
     ];
-
+    function scroll(){
+        fly.forEach(function(fly){
+            isInPosition(fly.id, fly.location, fly.zoom, fly.scrollLocation)
+        });
+    };
+    
+    function isInPosition(id, location, zoom){
+        
+        // get element and element's property 'top'
+        var block1 = document.getElementById(id);
+        var rect = block1.getBoundingClientRect();
+        y = rect.top;
+    
+        // set the top margin as a ratio of innerHeight
+        var topMargin = window.innerHeight / 2;
+    
+        // call flyTo when top of element is halfway up innerHeight
+        if ((y-topMargin) < 0 && y > 0){
+            sliderMap.flyTo(location, zoom, {
+                animate: true,
+                duration: 2 // in seconds
+            });
+        };
+    };
+//changed "item" to "places" --> it might still need to be "item" but i am trying to figure things out
+//also I am not sure if this function should be directly below the fly array or the places array
     function scrollLocation(){
-        locations.forEach(function(item){
-            locatorIsInPosition(item.id, item.location, item.zoom)
+        locations.forEach(function(fly){
+            locatorIsInPosition(fly.id, fly.location, fly.zoom)
         });
     };
     
@@ -201,6 +248,8 @@ var fly= [
             });
         };
     };
+    // function to trigger flyTo on scroll
+
    
     //this section of code  creates the full map at end of the scroll ****Copied from Jake's code with minor edits
    /* function createFinalMap(){
@@ -255,8 +304,8 @@ function getData(){
 
 // function to trigger flyTo on scroll
 function scroll(){
-    fly.forEach(function(item){
-        isInPosition(item.id, item.location, item.zoom)
+    fly.forEach(function(places){
+        isInPosition(places.id, places.location, places.zoom)
     });
 };
 createMap();
