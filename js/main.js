@@ -57,7 +57,7 @@ function createArray(lat,long){
 
 
 // create location map --> this will be used for flyover?? Do we need this chuck of code?
-function createLocationMap(){
+/*function createLocationMap(){
     locationMap = L.map('locationMap',{
         center: [36.1905128,-153.4242405],
         zoom: 5,
@@ -71,7 +71,7 @@ function createLocationMap(){
 //declare map variable 
 var map;
 };
-
+*/
 
 
 //step 1 create map
@@ -91,7 +91,6 @@ function createMap() {
 
     });
 
-//call getData function
     getData();
  };
 // get user location if user selects yes button
@@ -199,8 +198,8 @@ var fly= [
         }
     ];
     function scroll(){
-        fly.forEach(function(fly){
-            isInPosition(fly.id, fly.location, fly.zoom, fly.scrollLocation)
+        fly.forEach(function(item){
+            isInPosition(item.id, item.location, item.zoom, item.scrollLocation)
         });
     };
     
@@ -225,8 +224,8 @@ var fly= [
 //changed "item" to "places" --> it might still need to be "item" but i am trying to figure things out
 //also I am not sure if this function should be directly below the fly array or the places array
     function scrollLocation(){
-        locations.forEach(function(fly){
-            locatorIsInPosition(fly.id, fly.location, fly.zoom)
+        locations.forEach(function(item){
+            locatorIsInPosition(item.id, item.location, item.zoom)
         });
     };
     
@@ -302,10 +301,13 @@ function getData(){
 };
 */
 
+
 // function to trigger flyTo on scroll
 function scroll(){
-    fly.forEach(function(places){
-        isInPosition(places.id, places.location, places.zoom)
+    fly.forEach(function(item){
+        isInPosition(item.id, item.location, item.zoom)
     });
 };
-createMap();
+
+createMap()
+}
