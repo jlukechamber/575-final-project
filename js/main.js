@@ -57,12 +57,12 @@ function createArray(lat,long){
 
 
 // create location map --> this will be used for flyover?? Do we need this chuck of code?
-/*function createLocationMap(){
-    locationMap = L.map('locationMap',{
+function createLocationMap(){
+    locationMap = L.map('map',{
         center: [36.1905128,-153.4242405],
-        zoom: 5,
+        zoom: 2,
         maxZoom: 12,
-        minZoom: 5,
+        minZoom: 2,
         scrollWheelZoom: false,
         zoomControl: false});
 
@@ -71,7 +71,6 @@ function createArray(lat,long){
 //declare map variable 
 var map;
 };
-*/
 
 
 //step 1 create map
@@ -79,42 +78,16 @@ function createMap() {
 
     //create the map (L. is leaflet)
     map = L.map('mapid', {
-        center: [36.1905128,-153.4242405],
-        zoom: 15,
-        //set zoom level constraints
-        //THIS WILL NEED TO CHANGE
-        minZoom: 9,
-        maxZoom: 1
-        //add panning constraints
-        // set panning constraint
-        //we need to set panning constraints
-
-    });
+        center: [36.19,-152.75],
+        zoom: 8,
+        maxZoom: 12,
+        minZoom: 8,
+        scrollWheelZoom: false,
+        zoomControl: false}
+    )};
 
     getData();
- };
-// get user location if user selects yes button
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(saveLocation);
-    };
-};
 
-// set lat long if user denies location access or does not click either button
-function noLocation() { 
-    var lat = 39.71;
-    var long = -105.06;
-    locations = createArray(lat, long);
-    scrollLocation(null, locations);
-};
-
-// set lat long if user allows location access
-function saveLocation(position) {
-    var lat = position.coords.latitude;
-    var long = position.coords.longitude;
-    locations = createArray(lat, long);
-    scrollLocation(null, locations);
-};
 
 //import GeoJSON data
 function getData() {
@@ -144,7 +117,6 @@ function getData() {
 };
 
 // create array containing flyTo locations
-//should this 
 var fly= [
         {
             id: "mBody",
@@ -206,8 +178,8 @@ var fly= [
     function isInPosition(id, location, zoom){
         
         // get element and element's property 'top'
-        var block1 = document.getElementById(id);
-        var rect = block1.getBoundingClientRect();
+        var mBody = document.getElementById(id);
+        var rect = mBody.getBoundingClientRect();
         y = rect.top;
     
         // set the top margin as a ratio of innerHeight
@@ -221,8 +193,8 @@ var fly= [
             });
         };
     };
-//changed "item" to "places" --> it might still need to be "item" but i am trying to figure things out
-//also I am not sure if this function should be directly below the fly array or the places array
+
+// I am not sure if this function should be directly below the fly array or the places array
     function scrollLocation(){
         locations.forEach(function(item){
             locatorIsInPosition(item.id, item.location, item.zoom)
@@ -308,6 +280,4 @@ function scroll(){
         isInPosition(item.id, item.location, item.zoom)
     });
 };
-
 createMap()
-}
