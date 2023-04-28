@@ -56,16 +56,8 @@
     ];
 /*
 
-// create location map --> this will be used for flyover?? Do we need this chuck of code?
-/* function createLocationMap(){
-    locationMap = L.map('map',{
-        center: [36.1905128,-153.4242405],
-        zoom: 2,
-        maxZoom: 12,
-        minZoom: 2,
-        scrollWheelZoom: false,
-        zoomControl: false});
 
+<<<<<<< Updated upstream
 
     };
 //declare map variable 
@@ -74,6 +66,9 @@ var map;
 //making map and fly global variables
 var map;
 var fly;
+=======
+};
+>>>>>>> Stashed changes
 //step 1 create map
 function createMap() {
 
@@ -104,16 +99,7 @@ function getData() {
             layer.addTo(map)
 
         })
-        // .then(function (json) {
-        //     var attributes = processData(json);
-        //     console.log(attributes)
-        //     minValue = calculateMinValue(json);
-        //     //call function to create proportional symbols
-        //     createPropSymbols(json, attributes);
-        //     createSequenceControls(attributes);
-        //     createLegend(attributes);
-
-        // })
+        
 };
 
 // create array containing flyTo locations
