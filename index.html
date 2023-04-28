@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title></title>
+<meta charset="utf-8">
+<title>Fly to a location based on scroll position</title>
 
     <!--put your external stylesheet links here-->
     <link rel="stylesheet" href="lib/bootstrap.min.css">
@@ -14,138 +12,231 @@
 
 
 </head>
-
-<body>
     <!--put your initial page content here-->
     <!--scroll content-->
     <div id="mapid"></div>
-    <div class="content">
-        <div>
-            <div class="container">
-                <div class="column">
-                    <div class="col-md-6">
-                        <style>
-                            #map {
-                                position: fixed;
-                                width: 50%;
-                            }
+    </style>
+    <body>
+    <style>
+    #mapid {
+    position: fixed;
+    width: 50%;
+    }
+    #features {
+    width: 50%;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+    }
+    section {
+    padding: 25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+    }
+    section.active {
+    opacity: 1;
+    }
+    section:last-child {
+    border-bottom: none;
+    margin-bottom: 200px;
+    }
+    </style>
+     
+    <div id="mapid"></div>
+    <div id="features">
+    <section id="fly" class="active">
+        <h3>MIND BODY</h3>
+<p>
+November 1895. London is shrouded in fog and Sherlock Holmes and
+Watson pass time restlessly awaiting a new case. "The London
+criminal is certainly a dull fellow," Sherlock bemoans. "There have
+been numerous petty thefts," Watson offers in response. Just then a
+telegram arrives from Sherlock's brother Mycroft with a mysterious
+case.
+</p>
+</section>
+<section id="Conciousness">
+<h3>Conciousness</h3>
+<p>
+Arthur Cadogan West was found dead, head crushed in on train tracks
+at Aldgate Station at 6AM Tuesday morning. West worked at Woolwich
+Arsenal on the Bruce-Partington submarine, a secret military
+project. Plans for the submarine had been stolen and seven of the
+ten missing papers were found in West's possession. Mycroft implores
+Sherlock to take the case and recover the three missing papers.
+</p>
+</section>
+<section id="Subjectivity">
+<h3>Subjectivity</h3>
+<p>
+Holmes and Watson's investigations take them across London. Sherlock
+deduces that West was murdered elsewhere, then moved to Aldgate
+Station to create the illusion that he was crushed on the tracks by
+a train. On their way to Woolwich Sherlock dispatches a telegram to
+Mycroft at London Bridge: "Send list of all foreign spies known to
+be in England, with full address."
+</p>
+</section>
+<section id="Ego">
+<h3>Ego</h3>
+<p>
+While investigating at Woolwich Arsenal Sherlock learns that West
+did not have the three keysdoor, office, and
+safe necessary to steal the papers. The train station clerk
+mentions seeing an agitated West boarding the 8:15 train to London
+Bridge. Sherlock suspects West of following someone who had access
+to the Woolwich chief's keyring with all three keys.
+</p>
+</section>
+<section id="Antiego">
+<h3>Antiego</h3>
+<p>
+Mycroft responds to Sherlock's telegram and mentions several spies.
+Hugo Oberstein of 13 Caulfield Gardens catches Sherlock's eye. He
+heads to the nearby Gloucester Road station to investigate and
+learns that the windows of Caulfield Gardens open over rail tracks
+where trains stop frequently.
+</p>
+</section>
+<section id="Other">
+<h3>Other</h3>
+<p>
+Holmes deduces that the murderer placed West atop a stopped train at
+Caulfield Gardens. The train traveled to Aldgate Station before
+West's body finally toppled off. Backtracking to the criminal's
+apartment, Holmes finds a series of classified ads from
+<em>The Daily Telegraph</em> stashed away. All are under the name
+Pierrot: "Monday night after nine. Two taps. Only ourselves. Do not
+be so suspicious. Payment in hard cash when goods delivered."
+</p>
+</section>
+<section id="Will">
+<h3>Will</h3>
+<p>
+Holmes and Watson head to The Daily Telegraph and place an ad to
+draw out the criminal. It reads: "To-night. Same hour. Same place.
+Two taps. Most vitally important. Your own safety at stake.
+Pierrot." The trap works and Holmes catches the criminal: Colonel
+Valentine Walter, the brother of Woolwich Arsenal's chief. He
+confesses to working for Hugo Oberstein to obtain the submarine
+plans in order to pay off his debts.
+</p>
+</section>
+<section id="Freedom">
+<h3>Freedom</h3>
+<p>
+Walter writes to Oberstein and convinces him to meet in the smoking
+room of the Charing Cross Hotel where he promises additional plans
+for the submarine in exchange for money. The plan works and Holmes
+and Watson catch both criminals.
+</p>
+</section>
+<section id="Unconsciousness">
+    <h3>Unconsciousness</h3>
+    <p>
+    Walter writes to Oberstein and convinces him to meet in the smoking
+    room of the Charing Cross Hotel where he promises additional plans
+    for the submarine in exchange for money. The plan works and Holmes
+    and Watson catch both criminals.
+    </p>
+    </section>
+    <section id="Objectivity">
+        <h3>Objectivity</h3>
+        <p>
+        Walter writes to Oberstein and convinces him to meet in the smoking
+        room of the Charing Cross Hotel where he promises additional plans
+        for the submarine in exchange for money. The plan works and Holmes
+        and Watson catch both criminals.
+        </p>
+        </section>
 
-                            #features {
-                                width: 50%;
-                                margin-left: 50%;
-                                background-color: #fafafa;
-                            }
 
-                            section {
-                                padding: 25px 50px;
-                                line-height: 25px;
-                                border-bottom: 1px solid #ddd;
-                                opacity: 0.25;
-                                font-size: 13px;
-                            }
-                        </style>
-                    </div>
+   <script>
+        var fly= {
+    'mbody': {
+        center:[-154.1422696, 35.7988407],
+        zoom: 9
+    },
+    
+    'Conciousness': {
+        center:[-153.4242405, 36.1905128],
+        zoom: 9
+    },
+    
+    'Subjectivity': {
+        center:[-152.6586802,36.7255401],
+        zoom: 9
+    },
+    'Ego': {
+        center: [-151.6775737,36.4988286],
+        zoom: 9
+    },
+   'Antiego': {
+        center: [-151.1275595, 35.9832893],
+        zoom: 9
+    },
+   'Other' : {
+        center: [-151.1461410,35.4613327],
+        zoom: 5
+    },
+   'Will' : {
+        center: [-151.5809496,35.7875796],
+        zoom: 4
+    },
+   'Freedom' : {
+     center: [-152.4691482, 36.1755150],
+     zoom: 3  
+    },
+   'Unconsciousness' : {
+        center: [-153.3573469,35.5006736],
+        zoom: 6
+    },
+   'Objectivity' : {
+        center: [-152.5100277,35.6125384],
+        zoom: 10
+    }
+        };
+
+    let activeFlyName = 'mBody';
+function setActiveFly(flyName) {
+if (flyName === activeFlyName) return;
+ 
+map.flyTo(fly[flyName]);
+ 
+document.getElementById(flyName).classList.add('active');
+document.getElementById(activeFlyName).classList.remove('active');
+ 
+activeFlyName = flyName;
+}
+ 
+function isElementOnScreen(id) {
+var element = document.getElementById(id);
+var bounds = element.getBoundingClientRect();
+return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+
+// On every scroll event, check which element is on screen
+window.onscroll = () => {
+for (var flyName in fly) {
+if (isElementOnScreen(flyName)) {
+setActiveChapter(flyName);
+break;
+}
+}
+};
+ </script>
 
 
-                    <div class="scroll-container" id="mapid">
-                        <div class="col-md-6" id="item1">
-                            <div id="mapid" class="vert-center"></div>
-                        </div>
-                    </div>
-
-                    <div class="content">
-                        <div class="row">
-                            <p class="titletext center" id="maintext">very intellegent writing</p>
-                        </div>
-                        <div class="middletext">
-                            very intellegent writing
-                        </div>
-                        <div class="righttext">
-
-                            very intellegent writing
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="titletext center sm-margin" id="maintext">very intellegent writing</p>
-                    </div>
-                </div>
-
-                <div class="scroll-container sm-margin">
-                    <div class="col-md-6" id="item1">
-                        <div id="map" class="vert-center"></div>
-                    </div>
-                    <div class="foreground-item no-event">
-                        <div class="row">
-                            <div class="center background-transparent" id="mBody">
-                                <p class="no-margin">very intellegent writing</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="center background-transparent" id="Conciousness">
-                                <p class="no-margin">very intellegent writing</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="center background-transparent" id="Subjectivity">
-                                <p class="no-margin">very intellegent writing</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="center background-transparent" id="Ego">
-                                <p class="no-margin">very intellegent writing</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="center background-transparent" id="Antiego">
-                                <p class="no-margin">very intellegent writing</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="center background-transparent" id="Other">
-                                <p class="no-margin">very intellegent writing</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="center background-transparent" id="Will">
-                                <p class="no-margin">very intellegent writing</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="center background-transparent" id="Freedom">
-                                <p class="no-margin">very intellegent writing</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="center background-transparent" id="Unconsciousness">
-                                <p class="no-margin">very intellegent writing</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="center background-transparent" id="Objectivity">
-                                <p class="no-margin">very intellegent writing</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content">
-                    <div class="row ">
-                        <p class="titletext center" id="maintext">very intellegent writing</p>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="row ">
-                        <p class="titletext center" id="maintext">very intellegent writing</p>
-                    </div>
-                </div>
-
-                <!--you can also use this space for internal scripts;
+                    <!--you can also use this space for internal scripts;
         place these within <script> tags-->
 
-                <!--put your external script links here-->
-                <script type="text/javascript" src="js/bootstrap.min.js"></script>
-                <script type="text/javascript" src="lib/leaflet.js"></script>
-                <script type="text/javascript" src="js/main.js"></script>
+                    <!--put your external script links here-->
+                    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+                    <script type="text/javascript" src="lib/leaflet.js"></script>
+                    <script type="text/javascript" src="js/main.js"></script>
 
 
 </body>

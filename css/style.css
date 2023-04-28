@@ -1,5 +1,9 @@
 /*insert style here*/
 #mapid{
     height:800px;
-    width:1500px;
+    width: 800px;
+}
+.sidecar{
+    height:50%;
+    width:50%;
 }

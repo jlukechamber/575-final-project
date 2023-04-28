@@ -71,6 +71,9 @@
 //declare map variable 
 var map;
 */
+//making map and fly global variables
+var map;
+var fly;
 //step 1 create map
 function createMap() {
 
@@ -114,6 +117,7 @@ function getData() {
 };
 
 // create array containing flyTo locations
+function createArray(lat,long){
 var fly= [
     {
         id: "mBody",
@@ -166,7 +170,11 @@ var fly= [
         zoom: 10
     }
 ];
-    function scroll(){
+
+return fly;
+};
+
+  /*  function scroll(){
         fly.forEach(function(item){
             isInPosition(item.id, item.location, item.zoom, item.scrollLocation)
         });
@@ -193,8 +201,8 @@ var fly= [
 
 // function to trigger image switch on scroll
 //caught TypeError: Cannot read properties of null (reading 'getBoundingClientRect') at isInPosition (main.js:179:26) at main.js:270:9 at Array.forEach (<anonymous>) at HTMLDocument.scroll (main.js:269:9)
-function mapScroll(){
-    map.forEach(function(item){
+/*function mapScroll(){
+    fly.forEach(function(item){
         isInPosition(item.id)
     });
 };
@@ -263,7 +271,7 @@ function getData(){
             IDApoints.setStyle(style);
         });
 };
-*/
+
 
 // function to trigger flyTo on scroll
 function scroll(){
@@ -271,7 +279,8 @@ function scroll(){
         isInPosition(item.id, item.location, item.zoom)
     });
 };
+*/
 createMap();
 
-document.addEventListener('scroll', scroll)
-document.addEventListener('scroll', mapScroll)
+//document.addEventListener('scroll', scroll)
+//document.addEventListener('scroll', mapScroll)
