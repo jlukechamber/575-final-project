@@ -2,13 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Fly to a location based on scroll position</title>
+<title>Continents of the Mind</title>
 
     <!--put your external stylesheet links here-->
     <link rel="stylesheet" href="lib/bootstrap.min.css">
     <link rel="stylesheet" href="lib/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
-
+<style>
+    body{margin:0; padding: 0;}
+    #mapid {position:absolute; width: 100%;}
+</style>
 
 
 </head>
@@ -48,7 +51,7 @@
      
     <div id="mapid"></div>
     <div id="features">
-    <section id="fly" class="active">
+    <section id="Body" class="active">
         <h3>MIND BODY</h3>
 <p>
 November 1895. London is shrouded in fog and Sherlock Holmes and
@@ -156,8 +159,21 @@ and Watson catch both criminals.
 
 
    <script>
+//add tileset here 
+
+// mapboxgl.accessToken = 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA';
+// const map = new mapboxgl.Map({
+// container: 'map',
+// // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+// style: 'mapbox://styles/mapbox/streets-v12',
+// center: [-0.15591514, 51.51830379],
+// zoom: 15.5,
+// bearing: 27,
+// pitch: 45
+// });
+
         var fly= {
-    'mbody': {
+    'Body': {
         center:[-154.1422696, 35.7988407],
         zoom: 9
     },
@@ -201,9 +217,22 @@ and Watson catch both criminals.
     }
         };
 
-    let activeFlyName = 'mBody';
+    
+// On every scroll event, check which element is on screen
+//
+window.onscroll = () => {
+for (var flyName in fly) {
+if (isElementOnScreen(flyName)) {
+setActiveChapter(flyName);
+break;
+}
+}
+};
+
+    let activeFlyName = 'Body';
 function setActiveFly(flyName) {
-if (flyName === activeFlyName) return;
+if (flyName === activeFlyName)
+return;
  
 map.flyTo(fly[flyName]);
  
@@ -214,20 +243,23 @@ activeFlyName = flyName;
 }
  
 function isElementOnScreen(id) {
-var element = document.getElementById(id);
+    
+    //
+    //I think the variables are not in the DOM and that is why the getBoundingClientRect isnt working
+
+var element = document.getElementsById(id );  
+//var element = document.getElementById(id);
 var bounds = element.getBoundingClientRect();
 return bounds.top < window.innerHeight && bounds.bottom > 0;
+//this no workie... Issue on line 222... getBoundingClientRect
+console.log("sup")
 }
+//do we need to add event listeners?
+//example.... 
+//window.addEventListner("scroll", function(){
 
-// On every scroll event, check which element is on screen
-window.onscroll = () => {
-for (var flyName in fly) {
-if (isElementOnScreen(flyName)) {
-setActiveChapter(flyName);
-break;
-}
-}
-};
+//});
+
  </script>
 
 
