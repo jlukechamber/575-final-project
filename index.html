@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 <style>
     body{margin:0; padding: 0;}
-    #mapid {position:absolute;}
+    #mapid {position:absolute; width: 100%;}
 </style>
 
 
@@ -158,6 +158,19 @@ and Watson catch both criminals.
 
 
    <script>
+//add tileset here 
+
+// mapboxgl.accessToken = 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA';
+// const map = new mapboxgl.Map({
+// container: 'map',
+// // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+// style: 'mapbox://styles/mapbox/streets-v12',
+// center: [-0.15591514, 51.51830379],
+// zoom: 15.5,
+// bearing: 27,
+// pitch: 45
+// });
+
         var fly= {
     'Body': {
         center:[-154.1422696, 35.7988407],
@@ -202,7 +215,10 @@ and Watson catch both criminals.
         zoom: 10
     }
         };
+
+    
 // On every scroll event, check which element is on screen
+//
 window.onscroll = () => {
 for (var flyName in fly) {
 if (isElementOnScreen(flyName)) {
@@ -226,12 +242,11 @@ activeFlyName = flyName;
 }
  
 function isElementOnScreen(id) {
-    //havent we been using name not id? when you look in the console the id of each polygon is a number 
-    //which i think would end upbeing something like..
-    //but so far this change does nothing
+    
+    //
     //I think the variables are not in the DOM and that is why the getBoundingClientRect isnt working
 
-var element = document.getElementsByTagName(name);  
+var element = document.getElementsById(id );  
 //var element = document.getElementById(id);
 var bounds = element.getBoundingClientRect();
 return bounds.top < window.innerHeight && bounds.bottom > 0;

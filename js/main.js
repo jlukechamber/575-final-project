@@ -92,7 +92,8 @@ function getData() {
         })
         .then(function(json){
             console.log(json)
-            console.log(mapid)
+            console.log(features)
+            console.log("")
             var layer = L.geoJson(json,{
 
             })
@@ -103,62 +104,62 @@ function getData() {
 };
 //This isnt getting used currently 
 // create array containing flyTo locations
-function createArray(lat,long){
-const fly= [
-    {
-        id: "mBody",
-        location:[-154.1422696, 35.7988407],
-        zoom: 9
-    },
-    {
-        id: "Conciousness",
-        location:[-153.4242405, 36.1905128],
-        zoom: 9
-    },
-    {
-        id: "Subjectivity",
-        location:[-152.6586802,36.7255401],
-        zoom: 9
-    },
-    {
-        id: "Ego",
-        location: [-151.6775737,36.4988286],
-        zoom: 9
-    },
-    {
-        id: "Antiego",
-        location: [-151.1275595, 35.9832893],
-        zoom: 9
-    },
-    {
-        id: "Other",
-        location: [-151.1461410,35.4613327],
-        zoom: 5
-    },
-    {
-        id: "Will",
-        location: [-151.5809496,35.7875796],
-        zoom: 4
-    },
-    {
-     id: 'Freendom',
-     location: [-152.4691482, 36.1755150],
-     zoom: 3  
-    },
-    {
-        id: "Unconsciousness",
-        location: [-153.3573469,35.5006736],
-        zoom: 6
-    },
-    {
-        id: "Objectivity",
-        location: [-152.5100277,35.6125384],
-        zoom: 10
-    }
-];
+// function createArray(lat,long){
+// const fly= [
+//     {
+//         id: "mBody",
+//         location:[-154.1422696, 35.7988407],
+//         zoom: 9
+//     },
+//     {
+//         id: "Conciousness",
+//         location:[-153.4242405, 36.1905128],
+//         zoom: 9
+//     },
+//     {
+//         id: "Subjectivity",
+//         location:[-152.6586802,36.7255401],
+//         zoom: 9
+//     },
+//     {
+//         id: "Ego",
+//         location: [-151.6775737,36.4988286],
+//         zoom: 9
+//     },
+//     {
+//         id: "Antiego",
+//         location: [-151.1275595, 35.9832893],
+//         zoom: 9
+//     },
+//     {
+//         id: "Other",
+//         location: [-151.1461410,35.4613327],
+//         zoom: 5
+//     },
+//     {
+//         id: "Will",
+//         location: [-151.5809496,35.7875796],
+//         zoom: 4
+//     },
+//     {
+//      id: 'Freendom',
+//      location: [-152.4691482, 36.1755150],
+//      zoom: 3  
+//     },
+//     {
+//         id: "Unconsciousness",
+//         location: [-153.3573469,35.5006736],
+//         zoom: 6
+//     },
+//     {
+//         id: "Objectivity",
+//         location: [-152.5100277,35.6125384],
+//         zoom: 10
+//     }
+// ];
 
-return fly;
-};
+// //return fly;
+// };
 
   /*  function scroll(){
         fly.forEach(function(item){
