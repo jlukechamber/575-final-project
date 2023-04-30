@@ -66,9 +66,8 @@ var map;
 //making map and fly global variables
 var map;
 var fly;
-=======
-};
->>>>>>> Stashed changes
+
+
 //step 1 create map
 function createMap() {
 
@@ -93,6 +92,7 @@ function getData() {
         })
         .then(function(json){
             console.log(json)
+            console.log(mapid)
             var layer = L.geoJson(json,{
 
             })
@@ -101,10 +101,10 @@ function getData() {
         })
         
 };
-
+//This isnt getting used currently 
 // create array containing flyTo locations
 function createArray(lat,long){
-var fly= [
+const fly= [
     {
         id: "mBody",
         location:[-154.1422696, 35.7988407],

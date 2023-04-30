@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Fly to a location based on scroll position</title>
+<title>Continents of the Mind</title>
 
     <!--put your external stylesheet links here-->
     <link rel="stylesheet" href="lib/bootstrap.min.css">
@@ -156,7 +156,7 @@ and Watson catch both criminals.
 
    <script>
         var fly= {
-    'mbody': {
+    'Body': {
         center:[-154.1422696, 35.7988407],
         zoom: 9
     },
@@ -200,9 +200,10 @@ and Watson catch both criminals.
     }
         };
 
-    let activeFlyName = 'mBody';
+    let activeFlyName = 'Body';
 function setActiveFly(flyName) {
-if (flyName === activeFlyName) return;
+if (flyName === activeFlyName)
+return;
  
 map.flyTo(fly[flyName]);
  
@@ -213,11 +214,23 @@ activeFlyName = flyName;
 }
  
 function isElementOnScreen(id) {
-var element = document.getElementById(id);
+    //havent we been using name not id? when you look in the console the id of each polygon is a number 
+    //which i think would end upbeing something like..
+    //but so far this change does nothing
+    //I think the variables are not in the DOM and that is why the getBoundingClientRect isnt working
+    var element = document.getElementsByTagName(name);
+   
+//var element = document.getElementById(id);
 var bounds = element.getBoundingClientRect();
 return bounds.top < window.innerHeight && bounds.bottom > 0;
+//this no workie... Issue on line 222... getBoundingClientRect
+console.log("sup")
 }
+//do we need to add event listeners?
+//example.... 
+//window.addEventListner("scroll", function(){
 
+//});
 // On every scroll event, check which element is on screen
 window.onscroll = () => {
 for (var flyName in fly) {
