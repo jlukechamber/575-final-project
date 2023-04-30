@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="lib/bootstrap.min.css">
     <link rel="stylesheet" href="lib/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
-
+<style>
+    body{margin:0; padding: 0;}
+    #mapid {position:absolute;}
+</style>
 
 
 </head>
@@ -47,7 +50,7 @@
      
     <div id="mapid"></div>
     <div id="features">
-    <section id="fly" class="active">
+    <section id="Body" class="active">
         <h3>MIND BODY</h3>
 <p>
 November 1895. London is shrouded in fog and Sherlock Holmes and
@@ -199,6 +202,15 @@ and Watson catch both criminals.
         zoom: 10
     }
         };
+// On every scroll event, check which element is on screen
+window.onscroll = () => {
+for (var flyName in fly) {
+if (isElementOnScreen(flyName)) {
+setActiveChapter(flyName);
+break;
+}
+}
+};
 
     let activeFlyName = 'Body';
 function setActiveFly(flyName) {
@@ -218,8 +230,8 @@ function isElementOnScreen(id) {
     //which i think would end upbeing something like..
     //but so far this change does nothing
     //I think the variables are not in the DOM and that is why the getBoundingClientRect isnt working
-    var element = document.getElementsByTagName(name);
-   
+
+var element = document.getElementsByTagName(name);  
 //var element = document.getElementById(id);
 var bounds = element.getBoundingClientRect();
 return bounds.top < window.innerHeight && bounds.bottom > 0;
@@ -231,15 +243,7 @@ console.log("sup")
 //window.addEventListner("scroll", function(){
 
 //});
-// On every scroll event, check which element is on screen
-window.onscroll = () => {
-for (var flyName in fly) {
-if (isElementOnScreen(flyName)) {
-setActiveChapter(flyName);
-break;
-}
-}
-};
+
  </script>
 
 
