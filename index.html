@@ -2,6 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    
 <title>Continents of the Mind</title>
 
     <!--put your external stylesheet links here-->
@@ -9,19 +12,18 @@
     <link rel="stylesheet" href="lib/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
 <style>
-    body{margin:0; padding: 0;}
-    #mapid {position:absolute; width: 100%;}
+   
 </style>
 
 
 </head>
     <!--put your initial page content here-->
     <!--scroll content-->
-    <div id="mapid"></div>
-    </style>
+    <!-- <div id="mapid"></div> -->
     <body>
     <style>
-    #mapid {
+    body{margin:0; padding: 0;}
+    #map {
     position: fixed;
     width: 50%;
     }
@@ -48,9 +50,9 @@
     }
     </style>
      
-    <div id="mapid"></div>
-    <div id="features">
-    <section id="Body" class="active">
+<div id="map"></div>
+<div id="features">
+<section id="Body" class="active">
         <h3>MIND BODY</h3>
 <p>
 November 1895. London is shrouded in fog and Sherlock Holmes and
@@ -170,8 +172,18 @@ and Watson catch both criminals.
 // bearing: 27,
 // pitch: 45
 // });
+mapboxgl.accessToken = 'Ypk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA';
 
-        var fly= {
+// Initialize the map
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/randimaes/clh418hoa019301p477eg0jbm',
+  center: [36.189, -152.551],
+  zoom: 6.71
+});
+
+
+        const fly= {
     'Body': {
         center:[-154.1422696, 35.7988407],
         zoom: 9
@@ -219,6 +231,30 @@ and Watson catch both criminals.
     
 // On every scroll event, check which element is on screen
 //
+let activeFlyName = 'Body';
+
+
+function setActiveFly(flyName) {
+if (flyName === activeFlyName)
+return;
+map.flyTo(fly[flyName]);
+document.getElementById(flyName).classList.add('active');
+document.getElementById(activeFlyName).classList.remove('active');
+activeFlyName = flyName;
+}
+function isElementOnScreen(id) {
+    
+    //
+    //I think the variables are not in the DOM and that is why the getBoundingClientRect isnt working
+
+var element = document.getElementsById(id);  
+//var element = document.getElementById(id);
+var bounds = element.getBoundingClientRect();
+return bounds.top < window.innerHeight && bounds.bottom > 0;
+//this no workie... Issue on line 222... getBoundingClientRect
+console.log("sup")
+}
+
 window.onscroll = () => {
 for (var flyName in fly) {
 if (isElementOnScreen(flyName)) {
@@ -228,31 +264,14 @@ break;
 }
 };
 
-    let activeFlyName = 'Body';
-function setActiveFly(flyName) {
-if (flyName === activeFlyName)
-return;
- 
-map.flyTo(fly[flyName]);
- 
-document.getElementById(flyName).classList.add('active');
-document.getElementById(activeFlyName).classList.remove('active');
- 
-activeFlyName = flyName;
-}
- 
-function isElementOnScreen(id) {
-    
-    //
-    //I think the variables are not in the DOM and that is why the getBoundingClientRect isnt working
 
-var element = document.getElementsById(id );  
-//var element = document.getElementById(id);
-var bounds = element.getBoundingClientRect();
-return bounds.top < window.innerHeight && bounds.bottom > 0;
-//this no workie... Issue on line 222... getBoundingClientRect
-console.log("sup")
-}
+ 
+ 
+
+ 
+
+ 
+
 //do we need to add event listeners?
 //example.... 
 //window.addEventListner("scroll", function(){
