@@ -1,9 +1,10 @@
 // explorable final map
-//var finalMap;
+var finalMap;
 //is it coming up
  // not entirely sure if I am adding this correctly because we are not using a geojson 
     //function getData() {
         //I know there are issues here but not sure what. I think it has to do with the brackets and parentheses between the function and the array
+       function getData (){
         var finalMap = {
 
             'body': {
@@ -77,7 +78,7 @@
                 pitch: 20
             }
         };
-   // };
+   };
 
 //generate the final map
 function createFinalMap() {
@@ -116,23 +117,6 @@ function createFinalMap() {
      }).addTo(finalMap);*/
 
     //call getData function
-    finalMap();
+    getData();
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', createFinalMap)
