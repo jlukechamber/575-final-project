@@ -40,13 +40,14 @@ function createMap() {
 */
 
 function getData() {
-    //load the data--> geojson file can be switched out for mapand.geojson
-    fetch("data/region_line_straight.geojson")
+    //load the data
+    fetch("data/region_polygons.geojson")
         .then(function (response) {
             return response.json();
         })
-        .then(function (json) {
-        })
+     //   })
+      //  .then(function (json) {
+       // })
 };
 
 
