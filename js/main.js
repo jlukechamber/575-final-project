@@ -1,6 +1,6 @@
 //initilize map and set center of map with coordinates
 var map2;
-function createmap(){
+/*function createmap(){
 
     map2 = L.map('map2', {
         center: [36.1755150, -152.4691482],
