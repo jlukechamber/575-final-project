@@ -57,7 +57,7 @@ body { margin: 0; padding: 0; }
         <p>paragraph about stuff</p>
     </section> 
 
-    <section id="body">
+    <section id="mbody">
         <h3>mBody</h3>
         <p>
             mbody paragraph
@@ -116,9 +116,37 @@ body { margin: 0; padding: 0; }
         <h3>Objectivity</h3>
         <p>
             objectivity paragraph
-            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
         </p>
     </section>
+    <section id="body">
+        <h4> body stuff</h4>
+        <p>paragraph about stuff</p>
+    </section> 
+    <section id="brain">
+        <h4> brain stuff</h4>
+        <p>paragraph about stuff</p>
+    </section> 
+    <section id="mind">
+        <h4> mind stuff</h4>
+        <p>paragraph about stuff</p>
+    </section> 
+    <section id="heart">
+        <h4> heart stuff</h4>
+        <p>paragraph about stuff</p>
+        </section>
+        <section id="soul">
+            <h4> soul stuff</h4>
+            <p>paragraph about stuff</p>
+        </section> 
+    </section> 
+    <section id="everything">
+        <h4> everything</h4>
+        <p>paragraph about everything</p>
+    </section> 
+    <section id="nothing">
+        <h4> nothing!!!</h4>
+        <p>paragraph about crazier stuff</p>
+    </section> 
 </div>
 <!-- how do i move the script into the js file -->
 <script>
@@ -157,7 +185,7 @@ body { margin: 0; padding: 0; }
             bearing:0,
             duration:4000
         },
-        'body': {
+        'mbody': {
             bearing: 27,
             center: [-154.1422696, 35.7988407],
             zoom: 8,
@@ -216,17 +244,61 @@ body { margin: 0; padding: 0; }
         },
 
         'unconsciousness': {
-            bearing: 90,
+            bearing: 0,
             center: [-153.3573469,35.5006736],
             zoom: 8,
-            pitch: 20
+            pitch: 0,
+            duration: 2000
         },
         'objectivity': {
-            bearing: 90,
+            bearing: 0,
             center: [-152.5100277,35.6125384],
             zoom: 8,
-            pitch: 20
-//HERE IS WHERE I WOULD ADD EVERYTHING AND NOTHING with accurate lat/long???
+            pitch: 0,
+            duration: 2000
+
+        },
+        'body':{
+            bearing:0,
+            center:[-154.1422696, 35.7988407],
+            zoom:5,
+            pitch: 0
+        },
+        'brain':{
+            bearing:0,
+            center:[-153.3573469,35.5006736],
+            zoom:7,
+            pitch:0
+        },
+        'mind':{
+            bearing:0,
+            center:[-152.4691482, 36.1755150],
+            zoom:7,
+            pitch:0
+        },
+        'heart':{
+            bearing:0,
+            center:[-151.6775737,36.4988286],
+            zoom:7,
+            pitch:0
+        },
+        'soul':{
+            bearing:0,
+            center:[-151.1275595, 35.9832893],
+            zoom:7,
+            pitch:0
+        },
+        'everything':{
+            bearing:0,
+            center:[-154.1422696, 35.7988407],
+            pitch:0,
+            zoom:6
+        },
+        'nothing':{
+            bearing:0,
+            center:[-151.1275595, 35.9832893],
+            pitch: 0,
+            bearing:0
         }
     };
 
