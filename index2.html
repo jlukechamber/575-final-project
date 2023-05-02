@@ -6,7 +6,9 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+<script type="text/javascript" src="lib/leaflet.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -112,6 +114,7 @@ body { margin: 0; padding: 0; }
         <p>
             objectivity paragraph
         </p>
+        //get rid of this? 
         <small id="citation">
             Adapted from
             <a href="http://www.gutenberg.org/files/2346/2346-h/2346-h.htm">Project Gutenberg</a>
@@ -228,6 +231,7 @@ body { margin: 0; padding: 0; }
         }
     };
 
+
     let activeChapterName = 'blankintro';
     function setActiveChapter(chapterName) {
         if (chapterName === activeChapterName) return;
@@ -257,6 +261,8 @@ body { margin: 0; padding: 0; }
     };
 
 </script>
+
+<div id="map2"></div>
 
 </body>
 </html>

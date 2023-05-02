@@ -12,4 +12,10 @@
     color: blueviolet;
 }
 
+#map2{
+    height: 400px;
+    width: 400px;
+    display: inline-block;
+}
+
 
