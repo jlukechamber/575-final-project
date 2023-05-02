@@ -103,17 +103,20 @@ body { margin: 0; padding: 0; }
         <h3>Freedom</h3>
         <p>
             freedom paragraph
+            
         </p>
+    </section>
     <section id="unconsciousness">
         <h3>Unconsciousness</h3>
         <p>
             unconsciousness paragraph
         </p>
-        
+    </section>
     <section id="objectivity">
         <h3>Objectivity</h3>
         <p>
             objectivity paragraph
+            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
         </p>
     </section>
 </div>
@@ -243,7 +246,7 @@ body { margin: 0; padding: 0; }
     function isElementOnScreen(id) {
         const element = document.getElementById(id);
         const bounds = element.getBoundingClientRect();
-        return bounds.top < window.innerHeight && bounds.bottom > 0;
+        return bounds.top < window.innerHeight && bounds.bottom > 200;
     }
 
     // On every scroll event, check which element is on screen
