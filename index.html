@@ -184,7 +184,7 @@ const map = new mapboxgl.Map({
 
         const fly= {
     'Body': {
-        center:[-154.1422696, 35.7988407],
+        center:[35.7988407, -154.1422696],
         zoom: 9
     },
     
@@ -246,7 +246,7 @@ function isElementOnScreen(id) {
     //
     //I think the variables are not in the DOM and that is why the getBoundingClientRect isnt working
 
-var element = document.getElementsById(id);  
+var element = document.getElementById(id);  
 //var element = document.getElementById(id);
 var bounds = element.getBoundingClientRect();
 return bounds.top < window.innerHeight && bounds.bottom > 0;

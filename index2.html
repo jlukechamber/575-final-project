@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Fly to a location based on scroll position</title>
+<title>Continents of the Mind</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
@@ -43,8 +43,19 @@ body { margin: 0; padding: 0; }
 <div id="map"></div>
 <div id="features">
     <!-- put in another section (and add to array) so there is a different opening frame? with the credits to logan? changing (decreasing pitch is kinda a cool animation?) -->
-    <section id="body" class="active">
-        <h3>mBody.</h3>
+    <section id="blankintro" class="active">
+<h3>uhhhhhh</h3>
+    </section>
+    <section id="intro2">
+<h3>merp</h3>
+    </section>
+    <section id="intro">
+        <h4> Logans introduction</h4>
+        <p>paragraph about stuff</p>
+    </section> 
+
+    <section id="body">
+        <h3>mBody</h3>
         <p>
             mbody paragraph
         </p>
@@ -79,7 +90,7 @@ body { margin: 0; padding: 0; }
             other paragraph
         </p>
     </section>
-    <section id="Will">
+    <section id="will">
         <h3>Will</h3>
         <p>
             Will paragraph
@@ -106,6 +117,7 @@ body { margin: 0; padding: 0; }
         </small>
     </section>
 </div>
+<!-- how do i move the script into the js file -->
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA';
     const map = new mapboxgl.Map({
@@ -113,61 +125,92 @@ body { margin: 0; padding: 0; }
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/randimaes/clh418hoa019301p477eg0jbm',
         center: [-152.4691482, 36.1755150],
-        zoom: 6,
-        bearing: 2,
-        pitch: 70
+        zoom: 5,
+        pitch: 80
+        //lessen the pitch but increase the zoom 
     });
 
     const chapters = {
+        'blankintro':{
+            center:[-152.4691482, 36.1755150],
+            zoom: 5.5,
+            pitch:70,
+            bearing:0,
+        
+        },
+        'intro2':{
+             center:[-152.4691482, 36.1755150],
+             zoom:5.7,
+             pitch:60,
+             bearing:0,
+             duration:5000
+
+        },
+        'intro':{
+            center:[-152.4691482, 36.1755150],
+            zoom:6,
+            pitch:50,
+            bearing:0,
+            duration:4000
+        },
         'body': {
             bearing: 27,
             center: [-154.1422696, 35.7988407],
             zoom: 8,
-            pitch: 0
+            pitch: 0,
+            duration:4000
         },
         'conciousness': {
-            duration: 6000,
+            duration: 2000,
             center: [-153.4242405, 36.1905128],
-            
             zoom: 8,
-            pitch: 0
+            pitch: 0,
+            bearing: -15
         },
         'subjectivity': {
-            bearing: 90,
+            bearing: -10,
             center: [-152.6586802,36.7255401],
             zoom: 8,
             speed: 0.6,
-            pitch: 40
+            pitch: 0,
+            duration:3000
         },
         'ego': {
-            bearing: 90,
+            bearing: 0,
             center: [-151.6775737,36.4988286],
-            zoom: 8
+            zoom: 8,
+            duration: 3000,
+            pitch:0
         },
         'antiego': {
-            bearing: 45,
+            bearing: 0,
             center: [-151.1275595, 35.9832893],
             zoom: 8,
-            pitch: 20,
-            speed: 0.5
+            pitch: 0,
+            duration:3000
         },
         'other': {
-            bearing: 180,
+            bearing: 25,
             center: [-151.1461410,35.4613327],
-            zoom: 8
+            zoom: 8,
+            duration: 3000,
+            pitch: 0
         },
-        'telegraph': {
-            bearing: 90,
+        'will': {
+            bearing: 0,
             center: [-151.5809496,35.7875796],
-            zoom: 17.3,
-            pitch: 40
+            zoom: 8,
+            pitch: 0,
+            duration:2000
         },
         'freedom': {
-            bearing: 90,
+            bearing: 0,
             center: [-152.4691482, 36.1755150],
             zoom: 8,
-            pitch: 20
+            pitch: 0,
+            duration:3000
         },
+
         'unconsciousness': {
             bearing: 90,
             center: [-153.3573469,35.5006736],
@@ -179,10 +222,11 @@ body { margin: 0; padding: 0; }
             center: [-152.5100277,35.6125384],
             zoom: 8,
             pitch: 20
+//HERE IS WHERE I WOULD ADD EVERYTHING AND NOTHING with accurate lat/long???
         }
     };
 
-    let activeChapterName = 'body';
+    let activeChapterName = 'blankintro';
     function setActiveChapter(chapterName) {
         if (chapterName === activeChapterName) return;
 
@@ -209,6 +253,8 @@ body { margin: 0; padding: 0; }
             }
         }
     };
+
+
 </script>
 
 </body>
