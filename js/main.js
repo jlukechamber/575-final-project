@@ -4,7 +4,10 @@ function createmap(){
 
     map2 = L.map('map2', {
         center: [36.1755150, -152.4691482],
-        zoom: 2
+        zoom: 8,
+        scrollWheelZoom: false,
+        minZoom: 8,
+        maxZoom: 15
     });
 
     //Step 1: add the openstreet map tilelayer
