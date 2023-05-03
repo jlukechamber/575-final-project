@@ -36,11 +36,42 @@ function getData() {
 
 function onEachFeature(feature, layer) {
     //bind hover
-    layer.bindTooltip(layer.feature.properties.continent,{
+    layer.bindTooltip(layer.feature.properties.region,{
         className:"custom-tooltip"
     })
+    layer.on('mouseover', function(e) {
+        e.target.setStyle({
+            fillOpacity: 0.8,
+        });
+    });
+    layer.on('mouseout', function(e) {
+        e.target.setStyle({
+            fillOpacity: 0.16,
 
-}
+            
+        });
+    });
+};
+
+/*function highlight() {
+
+    //change stroke
+    var continent = d3.selectAll(".id" + props.FID_1)
+        .style("stroke", "#c1121f")
+        .style("stroke-width", "2.5");
+    setLabel(props);
+};
+
+function dehighlight(props) {
+    var selected = d3.selectAll(".id" + props.FID_1)
+        .style("stroke", function () {
+            return getStyle(this, "stroke")
+        })
+        .style("stroke-width", function () {
+            return getStyle(this, "stroke-width")
+        });
+    }
+    */
 
 document.addEventListener('DOMContentLoaded', createmap)
 
