@@ -2,16 +2,16 @@
 <html>
 
 <head>
-<meta charset="utf-8">
-<title>Continents of the Mind</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-<link href="css/style.css" rel="stylesheet">
-<link href="lib/leaflet.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Continents of the Mind</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="lib/leaflet.css" rel="stylesheet">
 
-<script type="text/javascript" src="lib/leaflet.js"></script>
+    <script type="text/javascript" src="lib/leaflet.js"></script>
 
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
 
     <style>
         body {
@@ -29,47 +29,19 @@
 </head>
 
 <body>
-<style>
-    #map {
-        position: fixed;
-        width: 50%;
-    }
-    #features {
-        width: 50%;
-        margin-left: 50%;
-        font-family: sans-serif;
-        overflow-y: scroll;
-        background-color: #fafafa;
-    }
-    section {
-        padding: 25px 50px;
-        line-height: 25px;
-        border-bottom: 1px solid #ddd;
-        opacity: 0.25;
-        font-size: 13px;
-    }
-    section.active {
-        opacity: 1;
-    }
-    section:last-child {
-        border-bottom: none;
-        margin-bottom: 200px;
-    }
-</style>
-<div>
-<div id="map"></div>
-<div id="features">
-    <!-- put in another section (and add to array) so there is a different opening frame? with the credits to logan? changing (decreasing pitch is kinda a cool animation?) -->
-    <section id="blankintro" class="active">
-<h3>uhhhhhh</h3>
-    </section>
-    <section id="intro2">
-<h3>merp</h3>
-    </section>
-    <section id="intro">
-        <h4> Logans introduction</h4>
-        <p>paragraph about stuff</p>
-    </section> 
+    <style>
+        #map {
+            position: fixed;
+            width: 50%;
+        }
+
+        #features {
+            width: 50%;
+            margin-left: 50%;
+            font-family: sans-serif;
+            overflow-y: scroll;
+            background-color: #fafafa;
+        }
 
         section {
             padding: 25px 50px;
@@ -88,117 +60,118 @@
             margin-bottom: 200px;
         }
     </style>
+    <div>
 
-    <div id="map"></div>
-    <div id="features">
-        <!-- put in another section (and add to array) so there is a different opening frame? with the credits to logan? changing (decreasing pitch is kinda a cool animation?) -->
-        <section id="blankintro" class="active">
-            <h3>uhhhhhh</h3>
-        </section>
-        <section id="intro2">
-            <h3>merp</h3>
-        </section>
-        <section id="intro">
-            <h4> Logans introduction</h4>
-            <p>paragraph about stuff</p>
-        </section>
+            <div id="map"></div>
+            <div id="features">
+                <!-- put in another section (and add to array) so there is a different opening frame? with the credits to logan? changing (decreasing pitch is kinda a cool animation?) -->
+                <section id="blankintro" class="active">
+                    <h3>uhhhhhh</h3>
+                </section>
+                <section id="intro2">
+                    <h3>merp</h3>
+                </section>
+                <section id="intro">
+                    <h4> Logans introduction</h4>
+                    <p>paragraph about stuff</p>
+                </section>
 
-        <section id="mbody">
-            <h3>mBody</h3>
-            <p>
-                mbody paragraph
-            </p>
-        </section>
-        <section id="conciousness">
-            <h3>Conciousness</h3>
-            <p>
-                conciousness paragraph
-            </p>
-        </section>
-        <section id="subjectivity">
-            <h3>Subjectivity</h3>
-            <p>
-                subjectivity paragraph
-            </p>
-        </section>
-        <section id="ego">
-            <h3>Ego</h3>
-            <p>
-                ego paragraph
-            </p>
-        </section>
-        <section id="antiego">
-            <h3>Antiego</h3>
-            <p>
-                Antiego
-            </p>
-        </section>
-        <section id="other">
-            <h3>Other</h3>
-            <p>
-                other paragraph
-            </p>
-        </section>
-        <section id="will">
-            <h3>Will</h3>
-            <p>
-                Will paragraph
-            </p>
-        </section>
-        <section id="freedom">
-            <h3>Freedom</h3>
-            <p>
-                freedom paragraph
+                <section id="mbody">
+                    <h3>mBody</h3>
+                    <p>
+                        mbody paragraph
+                    </p>
+                </section>
+                <section id="conciousness">
+                    <h3>Conciousness</h3>
+                    <p>
+                        conciousness paragraph
+                    </p>
+                </section>
+                <section id="subjectivity">
+                    <h3>Subjectivity</h3>
+                    <p>
+                        subjectivity paragraph
+                    </p>
+                </section>
+                <section id="ego">
+                    <h3>Ego</h3>
+                    <p>
+                        ego paragraph
+                    </p>
+                </section>
+                <section id="antiego">
+                    <h3>Antiego</h3>
+                    <p>
+                        Antiego
+                    </p>
+                </section>
+                <section id="other">
+                    <h3>Other</h3>
+                    <p>
+                        other paragraph
+                    </p>
+                </section>
+                <section id="will">
+                    <h3>Will</h3>
+                    <p>
+                        Will paragraph
+                    </p>
+                </section>
+                <section id="freedom">
+                    <h3>Freedom</h3>
+                    <p>
+                        freedom paragraph
 
-            </p>
-        </section>
-        <section id="unconsciousness">
-            <h3>Unconsciousness</h3>
-            <p>
-                unconsciousness paragraph
-            </p>
-        </section>
-        <section id="objectivity">
-            <h3>Objectivity</h3>
-            <p>
-                objectivity paragraph
-            </p>
-        </section>
-        <section id="body">
-            <h4> body stuff</h4>
-            <p>paragraph about stuff</p>
-        </section>
-        <section id="brain">
-            <h4> brain stuff</h4>
-            <p>paragraph about stuff</p>
-        </section>
-        <section id="mind">
-            <h4> mind stuff</h4>
-            <p>paragraph about stuff</p>
-        </section>
-        <section id="heart">
-            <h4> heart stuff</h4>
-            <p>paragraph about stuff</p>
-        </section>
-        <section id="soul">
-            <h4> soul stuff</h4>
-            <p>paragraph about stuff</p>
-        </section> 
-    </section> 
-    <section id="everything">
-        <h4> everything</h4>
-        <p>paragraph about everything</p>
-    </section> 
-    <section id="nothing">
-        <h4> nothing!!!</h4>
-        <p>paragraph about crazier stuff</p>
-    </section> 
-</div>
-</div>
-<!-- how do i move the script into the js file -->
+                    </p>
+                </section>
+                <section id="unconsciousness">
+                    <h3>Unconsciousness</h3>
+                    <p>
+                        unconsciousness paragraph
+                    </p>
+                </section>
+                <section id="objectivity">
+                    <h3>Objectivity</h3>
+                    <p>
+                        objectivity paragraph
+                    </p>
+                </section>
+                <section id="body">
+                    <h4> body stuff</h4>
+                    <p>paragraph about stuff</p>
+                </section>
+                <section id="brain">
+                    <h4> brain stuff</h4>
+                    <p>paragraph about stuff</p>
+                </section>
+                <section id="mind">
+                    <h4> mind stuff</h4>
+                    <p>paragraph about stuff</p>
+                </section>
+                <section id="heart">
+                    <h4> heart stuff</h4>
+                    <p>paragraph about stuff</p>
+                </section>
+                <section id="soul">
+                    <h4> soul stuff</h4>
+                    <p>paragraph about stuff</p>
+                </section>
+                </section>
+                <section id="everything">
+                    <h4> everything</h4>
+                    <p>paragraph about everything</p>
+                </section>
+                <section id="nothing">
+                    <h4> nothing!!!</h4>
+                    <p>paragraph about crazier stuff</p>
+                </section>
+            </div>
+        </div>
+        <!-- how do i move the script into the js file -->
 
-<div id="map2"></div>
-<script type="text/javascript" src="js/main.js"></script>
+        <div id="map2"></div>
+        <script type="text/javascript" src="js/main.js"></script>
 
 </body>
 
