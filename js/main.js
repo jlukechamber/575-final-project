@@ -88,6 +88,8 @@ const map = new mapboxgl.Map({
     //lessen the pitch but increase the zoom 
 });
 
+//this code is for manually adding layers to the mapbox map
+
 // Wait until the map has finished loading.
 /*map.on('load', () => {
     //add labels
