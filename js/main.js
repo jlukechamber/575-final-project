@@ -28,10 +28,19 @@ function getData() {
         })
         .then(function (json) {
             var layer = L.geoJson(json, {
-
+                onEachFeature:onEachFeature
             }).addTo(map2)
         })
 };
+
+
+function onEachFeature(feature, layer) {
+    //bind hover
+    layer.bindTooltip(layer.feature.properties.continent,{
+        className:"custom-tooltip"
+    })
+
+}
 
 document.addEventListener('DOMContentLoaded', createmap)
 
@@ -227,18 +236,3 @@ window.onscroll = () => {
 //   }).addTo(map2);
 
 //idea2
-
-function onEachFeature(feature, layer) {
-    //bind hover
-    layer.on('mouseover', function (e) {
-      // e = event
-      console.log(e);
-      // You can make your ajax call declaration here
-       
-    });
-
-}
-//what to put in paren
-geojson = L.geoJson('data/region_polygons.geojson', {
-    onEachFeature: onEachFeature
-}).addTo(map2);
