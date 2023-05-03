@@ -17,4 +17,6 @@
     width: 100vw;
 }
 
-
+.custom-tooltip{
+    color:red !important;
+}
