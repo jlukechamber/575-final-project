@@ -1,6 +1,6 @@
 //initilize map and set center of map with coordinates
 var map2;
-function createmap(){
+function createmap() {
 
     map2 = L.map('map2', {
         center: [36.1755150, -152.4691482],
@@ -12,8 +12,8 @@ function createmap(){
 
     //Step 1: add the openstreet map tilelayer
     var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map2);
 
     getData();
@@ -78,6 +78,8 @@ function dehighlight(props) {
 document.addEventListener('DOMContentLoaded', createmap)
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA';
+
+//creae the map
 const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
@@ -87,6 +89,172 @@ const map = new mapboxgl.Map({
     pitch: 0
     //lessen the pitch but increase the zoom 
 });
+
+//this code is for manually adding layers to the mapbox map
+
+// Wait until the map has finished loading.
+/*map.on('load', () => {
+    //add labels
+    map.addSource('labels_out', {
+        'type': 'line',
+        'url': 'mapbox://randimaes.clh7u928h1kon2onav58rlb79',
+    });
+    map.addLayer({
+        'id': 'labels_out',
+        'source': 'labels_out',
+        'type': 'line',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'visible'
+            },
+    });
+    
+    map.addSource('labels_cont', {
+        'type': 'line',
+        'url': 'mapbox://randimaes.clh7nsyu32f722bqjpfjoa1ft',
+    });
+    map.addLayer({
+        'id': 'labels_cont',
+        'source': 'labels_cont',
+        'type': 'line',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'visible'
+            },
+    },'labels_out');    
+
+
+    //add continents   
+    map.addSource('continents', {
+        'type': 'fill',
+        'url': 'mapbox://randimaes.clh84t5dr0ifv2apth4kpger0-5wd92',
+    });
+    map.addLayer({
+        'id': 'continents',
+        'source': 'continents',
+        'type': 'fill',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'visible'
+            },
+    },'labels_cont');   
+
+    //add raster layers (x8 - spectrum, body, brain, mind, heart, soul, left brain, right brain)
+    map.addSource('spectrum', {
+        'type': 'raster',
+        'url': 'mapbox://randimaes.30bu39ip',
+    });
+    map.addLayer({
+        'id': 'spectrum',
+        'source': 'spectrum',
+        'type': 'raster',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'visible'
+            },
+    },'continents');
+
+    map.addSource('body', {
+        'type': 'raster',
+        'url': 'mapbox://randimaes.5itdo644',
+    });
+    map.addLayer({
+        'id': 'body',
+        'source': 'body',
+        'type': 'raster',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'none'
+            },
+    },'continents');
+
+    map.addSource('brain', {
+        'type': 'raster',
+        'url': 'mapbox://randimaes.0h1slq9h',
+    });
+    map.addLayer({
+        'id': 'brain',
+        'source': 'brain',
+        'type': 'raster',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'none'
+            },
+    },'continents');
+
+    map.addSource('mind', {
+        'type': 'raster',
+        'url': 'mapbox://randimaes.8f4h6lqq',
+    });
+    map.addLayer({
+        'id': 'mind',
+        'source': 'mind',
+        'type': 'raster',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'none'
+            },
+    },'continents');
+
+    map.addSource('heart', {
+        'type': 'raster',
+        'url': 'mapbox://randimaes.8kq924ep',
+    });
+    map.addLayer({
+        'id': 'heart',
+        'source': 'heart',
+        'type': 'raster',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'none'
+            },
+    },'continents');
+    
+    map.addSource('soul', {
+        'type': 'raster',
+        'url': 'mapbox://randimaes.8onuks7u',
+    });
+    map.addLayer({
+        'id': 'soul',
+        'source': 'soul',
+        'type': 'raster',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'none'
+            },
+    },'continents');
+
+    map.addSource('leftbrain', {
+        'type': 'raster',
+        'url': 'mapbox://randimaes.6bie16kd',
+    });
+    map.addLayer({
+        'id': 'leftbrain',
+        'source': 'leftbrain',
+        'type': 'raster',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'none'
+            },
+    },'continents');
+
+    map.addSource('rightbrain', {
+        'type': 'raster',
+        'url': 'mapbox://randimaes.2ane6eqv',
+    });
+    map.addLayer({
+        'id': 'rightbrain',
+        'source': 'rightbrain',
+        'type': 'raster',
+        'layout': {
+            // Make the layer visible by default.
+            'visibility': 'visible'
+            }
+    },'continents');
+
+
+});
+*/
 
 const chapters = {
     'blankintro': {
@@ -236,6 +404,11 @@ function setActiveChapter(chapterName) {
 
     document.getElementById(chapterName).classList.add('active');
     document.getElementById(activeChapterName).classList.remove('active');
+
+    //code to toggle visibility
+    /*if (chapterName.id){
+        map.setLayoutProperty(chapterName.id,"visibility","visible")
+    }*/
 
     activeChapterName = chapterName;
 }
