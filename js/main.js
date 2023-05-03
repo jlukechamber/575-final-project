@@ -19,12 +19,6 @@ function createmap(){
     getData();
 };
 
-//what link to useee here? 
-/*L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map2);
-*/
 
 function getData() {
     //load the data--> geojson file can be switched out for mapand.geojson
@@ -46,36 +40,32 @@ const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/randimaes/clh418hoa019301p477eg0jbm',
-    center: [-152.4691482, 36.1755150],
-    zoom: 5,
-    pitch: 80
+    center: [-152.63623, 35.979111],
+    zoom: 14,
+    pitch: 0
     //lessen the pitch but increase the zoom 
 });
 
 const chapters = {
     'blankintro': {
-        center: [-152.4691482, 36.1755150],
-        zoom: 5.5,
-        pitch: 70,
+        center: [-152.63623, 35.979111],
+        zoom: 14,
+        pitch: 0,
         bearing: 0,
-        speed: 1.5
+        duration:5000,
+        speed:0.5
 
     },
     'intro2': {
-        center: [-152.4691482, 36.1755150],
-        zoom: 5.7,
-        pitch: 60,
-        bearing: 0,
-        duration: 2000
-
-    },
-    'intro': {
-        center: [-152.4691482, 36.1755150],
-        zoom: 6,
+        center: [-152.799, 35.957],
+        zoom: 6.5,
         pitch: 50,
         bearing: 0,
-        duration: 4000
+        duration: 3000,
+        speed:0.5
+
     },
+    
     'mbody': {
         bearing: 27,
         center: [-154.1422696, 35.7988407],
@@ -150,16 +140,18 @@ const chapters = {
 
     },
     'body': {
-        bearing: 0,
-        center: [-154.1422696, 35.7988407],
-        zoom: 5,
-        pitch: 0
+        bearing: 28,
+        center: [-154.169, 35.226],
+        zoom: 8,
+        pitch: 64,
+        duration:3000
     },
     'brain': {
-        bearing: 0,
+        bearing: -15,
         center: [-153.3573469, 35.5006736],
-        zoom: 7,
-        pitch: 0
+        zoom: 8,
+        pitch: 64,
+        duration:3000
     },
     'mind': {
         bearing: 0,
@@ -209,7 +201,7 @@ function setActiveChapter(chapterName) {
 function isElementOnScreen(id) {
     const element = document.getElementById(id);
     const bounds = element.getBoundingClientRect();
-    return bounds.top < window.innerHeight && bounds.bottom > 200;
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
 }
 
 // On every scroll event, check which element is on screen
@@ -220,4 +212,33 @@ window.onscroll = () => {
             break;
         }
     }
-};
+}
+//idea 1
+// //add geojson feature
+// var geojsonFeature = data
+// //adding popups to map2
+
+// L.geoJSON(geojsonFeature, {
+//     onEachFeature: function(feature, layer) {
+//       if (feature.properties && feature.properties.popupContent) {
+//         layer.bindPopup(feature.properties.popupContent);
+//       }
+//     }
+//   }).addTo(map2);
+
+//idea2
+
+function onEachFeature(feature, layer) {
+    //bind hover
+    layer.on('mouseover', function (e) {
+      // e = event
+      console.log(e);
+      // You can make your ajax call declaration here
+       
+    });
+
+}
+//what to put in paren
+geojson = L.geoJson('data/region_polygons.geojson', {
+    onEachFeature: onEachFeature
+}).addTo(map2);
