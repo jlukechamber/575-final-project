@@ -38,16 +38,18 @@ function onEachFeature(feature, layer) {
     //bind hover
     layer.bindTooltip(layer.feature.properties.region,{
         className:"custom-tooltip"
+        //I think in this section we need to add the info within the popup
     })
+
     layer.on('mouseover', function(e) {
         e.target.setStyle({
             fillOpacity: 0.8,
         });
     });
+    //currently I just change the fillopactity to match the background but the highlight leaves a snail trail
     layer.on('mouseout', function(e) {
         e.target.setStyle({
             fillOpacity: 0.16,
-
             
         });
     });
