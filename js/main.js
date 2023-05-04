@@ -355,41 +355,60 @@ const chapters = {
         duration:3000
     },
     'brain': {
-        bearing: -15,
-        center: [-153.3573469, 35.5006736],
+        bearing: 7.2,
+        center: [-153.6789, 34.6172],
         zoom: 8,
-        pitch: 64,
+        pitch: 61,
         duration:3000
     },
     'mind': {
         bearing: 0,
-        center: [-152.4691482, 36.1755150],
-        zoom: 7,
-        pitch: 0
+        center: [-152.464, 34.36],
+        zoom: 8.47,
+        pitch: 60,
+        duration: 3000
     },
     'heart': {
-        bearing: 0,
-        center: [-151.6775737, 36.4988286],
-        zoom: 7,
-        pitch: 0
+        bearing: -11.2,
+        center: [-151.6866, 34.6394],
+        zoom: 8.64,
+        pitch: 65,
+        duration: 3000
     },
     'soul': {
-        bearing: 0,
-        center: [-151.1275595, 35.9832893],
-        zoom: 7,
-        pitch: 0
+        bearing: -24,
+        center: [-150.86, 34.9],
+        zoom: 9.34,
+        pitch: 66,
+        duration: 3000
+    },
+    'right_brain': {
+        bearing: -20,
+        center: [-151.693, 35.592],
+        zoom: 6.57,
+        pitch: 45,
+        duration: 3000
+    },
+    'left_brain': {
+        bearing: 20,
+        center: [-153.458, 35.804],
+        zoom: 6.57,
+        pitch: 45,
+        duration: 3000
     },
     'everything': {
-        bearing: 0,
-        center: [-154.1422696, 35.7988407],
-        pitch: 0,
-        zoom: 6
+        bearing: 88,
+        center: [-156.184, 35.075],
+        pitch: 62,
+        zoom: 8.3,
+        duration: 5000
     },
     'nothing': {
-        bearing: 0,
-        center: [-151.1275595, 35.9832893],
-        pitch: 0,
-        bearing: 0
+        bearing: -76,
+        center: [-148.72115, 34.78104],
+        pitch: 60,
+        zoom: 12,
+        duration: 10000
     }
 };
 
