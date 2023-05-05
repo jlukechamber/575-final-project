@@ -24,23 +24,28 @@
             top: 0;
             bottom: 0;
             width: 100%;
+            height: 100%
         }
     </style>
 
 </head>
 
 <body>
+        <!--position: fixed does not allow for text underneath the map-->
+         <!--position: initial could work-->
     <style>
+          #transition {
+            position: fixed;
+            color: red;
+            width: 100%;
+            height: 200px;
+        }
         #map {
             position: fixed;
             width: 50%;
-       
+            height: 100%
         }
-        #transition{
-            color: red;
-            width: 100%;
-            height: 300px;
-        }
+
 
         #features {
             width: 50%;
@@ -198,15 +203,20 @@
 
     </div>
     <!-- how do i move the script into the js file -->
+    <div>
+        <style>
+        #transition {
+            color: red;
+            width: 100%;
+            height: 200px;
+            position: fixed;
+
+        }
+    </style>
+    </div>
 
     <div id="transition">
-        SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-        SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-        SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-        SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-        SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-        SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-        SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+        cool and though provoking quote in between the scrollytelling and explore map
     </div>
     <div id="map2"></div>
 
