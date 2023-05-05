@@ -1,22 +1,31 @@
 /*insert style here*/
-#mapid{
-    height:800px;
+#mapid {
+    height: 800px;
     width: 800px;
 }
-.sidecar{
-    height:50%;
-    width:50%;
+
+.sidecar {
+    height: 50%;
+    width: 50%;
 }
+
 /*this changes type color*/
-#features{
+#features {
     color: blueviolet;
 }
 
-#map2{
+#map2 {
     height: 100vh;
     width: 100vw;
+    margin-top: 1px;
 }
 
-.custom-tooltip{
-    color:red !important;
+.custom-tooltip {
+    color: red !important;
+}
+
+#transition {
+
+    color: red;
+
 }

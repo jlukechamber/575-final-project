@@ -19,7 +19,6 @@ function createmap() {
     getData();
 };
 
-
 function getData() {
     //load the data--> geojson file can be switched out for mapand.geojson
     fetch("data/region_polygons.geojson")
@@ -55,25 +54,20 @@ function onEachFeature(feature, layer) {
     });
 };
 
-/*function highlight() {
-
-    //change stroke
-    var continent = d3.selectAll(".id" + props.FID_1)
-        .style("stroke", "#c1121f")
-        .style("stroke-width", "2.5");
-    setLabel(props);
-};
-
-function dehighlight(props) {
-    var selected = d3.selectAll(".id" + props.FID_1)
-        .style("stroke", function () {
-            return getStyle(this, "stroke")
+//THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
+L.geoJson(map2, {
+    onEachFeature: function(feature, layer) {
+      var label = L.marker(layer.getBounds().getCenter(), {
+        icon: L.divIcon({
+          className: "label",
+          html: layer.feature.properties.continent,
+          iconSize: [100, 40]
         })
-        .style("stroke-width", function () {
-            return getStyle(this, "stroke-width")
-        });
+      }).addTo(map);
     }
-    */
+});
+
+
 
 document.addEventListener('DOMContentLoaded', createmap)
 
