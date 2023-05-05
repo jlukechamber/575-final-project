@@ -78,7 +78,11 @@ function dehighlight(props) {
 document.addEventListener('DOMContentLoaded', createmap)
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA';
+var bounds = [
+    [-156.184, 35.075],
+    [-150.72115, 37.78104],
 
+  ];
 //creae the map
 const map = new mapboxgl.Map({
     container: 'map',
@@ -86,7 +90,8 @@ const map = new mapboxgl.Map({
     style: 'mapbox://styles/randimaes/clh418hoa019301p477eg0jbm',
     center: [-152.63623, 35.979111],
     zoom: 14,
-    pitch: 0
+    pitch: 0,
+    maxBounds: bounds
     //lessen the pitch but increase the zoom 
 });
 
@@ -358,29 +363,29 @@ const chapters = {
     },
     'brain': {
         bearing: 7.2,
-        center: [-153.6789, 34.6172],
+        center: [-153.5, 34],
         zoom: 8,
         pitch: 61,
         duration:3000
     },
     'mind': {
         bearing: 0,
-        center: [-152.464, 34.36],
-        zoom: 8.47,
+        center: [-152.464, 34],
+        zoom: 7.75,
         pitch: 60,
         duration: 3000
     },
     'heart': {
         bearing: -11.2,
         center: [-151.6866, 34.6394],
-        zoom: 8.64,
+        zoom: 8,
         pitch: 65,
         duration: 3000
     },
     'soul': {
         bearing: -24,
         center: [-150.86, 34.9],
-        zoom: 9.34,
+        zoom: 8.5,
         pitch: 66,
         duration: 3000
     },
@@ -446,6 +451,7 @@ window.onscroll = () => {
             break;
         }
     }
+
 }
 //idea 1
 // //add geojson feature
