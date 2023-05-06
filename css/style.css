@@ -24,8 +24,79 @@
     color: red !important;
 }
 
-#transition {
 
-    color: red;
+#openpage {
+    position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: cornflowerblue;
+        overflow-y: scroll;
+
 
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+/* im so confused how there is two of the same thing doing different things but it is working? */
+#map {
+    position: fixed;
+    width: 50%;
+    height: 100%
+}
+
+#transition {
+    position: relative;
+    background-color: cornsilk;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    overflow-y:scroll;
+}
+
+
+
+#features {
+    width: 50%;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+
+section {
+    padding: 25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+}
+
+section.active {
+    opacity: 1;
+}
+
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 200px;
+}
+
+#quote{
+    color:darkslategray;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+
+}
+

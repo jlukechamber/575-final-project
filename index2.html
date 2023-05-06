@@ -14,64 +14,25 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%
-        }
+        
     </style>
 
 </head>
 
 <body>
-        <!--position: fixed does not allow for text underneath the map-->
-         <!--position: initial could work-->
-    <style>
-          #transition {
-            position: fixed;
-            color: red;
-            width: 100%;
-            height: 200px;
-        }
-        #map {
-            position: fixed;
-            width: 50%;
-            height: 100%
-        }
+    <!-- both openpage div and transition div are drawing on top of map in a funky way  -->
+    <!-- using the z-index allowed me to place a div above map1 but I had to use <br> to make it take up more space -->
+         <div id="openpage">
+            <p id="quote">Outwardness lost, at last, its imagined attractions.
 
-
-        #features {
-            width: 50%;
-            margin-left: 50%;
-            font-family: sans-serif;
-            overflow-y: scroll;
-            background-color: #fafafa;
-        }
-
-        section {
-            padding: 25px 50px;
-            line-height: 25px;
-            border-bottom: 1px solid #ddd;
-            opacity: 0.25;
-            font-size: 13px;
-        }
-
-        section.active {
-            opacity: 1;
-        }
-
-        section:last-child {
-            border-bottom: none;
-            margin-bottom: 200px;
-        }
-    </style>
+                Only inwardness remained to be explored.
+                
+                Only the human soul remained terra incognita.
+                
+            </p>
+            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+        </div>
+   
     <div>
 
 
@@ -202,22 +163,13 @@
         </div>
 
     </div>
-    <!-- how do i move the script into the js file -->
-    <div>
-        <style>
-        #transition {
-            color: red;
-            width: 100%;
-            height: 200px;
-            position: fixed;
-
-        }
-    </style>
-    </div>
+    
 
     <div id="transition">
-        cool and though provoking quote in between the scrollytelling and explore map
+        <p>Mankind, ignorant of the truths that lie within every human being, looked outward–pushed ever outward. What mankind hoped to learn in its outward push was who was actually in charge of all creation, and what all creation was all about.</p>
+        <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>  <br>
     </div>
+
     <div id="map2"></div>
 
     <script type="text/javascript" src="js/main.js"></script>
