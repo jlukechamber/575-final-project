@@ -6,7 +6,7 @@
 
 .sidecar {
     height: 50%;
-    width: 50%;
+    width: 40%;
 }
 
 /*this changes type color*/
@@ -18,6 +18,7 @@
     height: 100vh;
     width: 100vw;
     margin-top: 1px;
+    /* background-color: #cfe7ee; this doesnt work */
 }
 
 .custom-tooltip {
@@ -99,4 +100,8 @@ section:last-child {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
 
 }
+
+.leaflet-container {
+    background-color: #0000;
+  }
 
