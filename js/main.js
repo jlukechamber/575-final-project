@@ -69,20 +69,6 @@ function onEachFeature(feature, layer) {
     });
 };
 
-//THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
-L.geoJson(map2, {
-    onEachFeature: function(feature, layer) {
-      var label = L.marker(layer.getBounds().getCenter(), {
-        icon: L.divIcon({
-          className: "label",
-          html: layer.feature.properties.continent,
-          iconSize: [100, 40]
-        })
-      }).addTo(map);
-    }
-});
-
-L.geoJSON(myGeojsonFeatures)
 
 document.addEventListener('DOMContentLoaded', createmap)
 
@@ -428,6 +414,20 @@ const chapters = {
     }
 };
 
+//THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
+L.geoJson(map2, {
+    onEachFeature: function(feature, layer) {
+      var label = L.marker(layer.getBounds().getCenter(), {
+        icon: L.divIcon({
+          className: "label",
+          html: layer.feature.properties.continent,
+          iconSize: [100, 40]
+        })
+      }).addTo(map2);
+    }
+});
+
+L.geoJSON(chapters)
 
 let activeChapterName = 'blankintro';
 function setActiveChapter(chapterName) {
