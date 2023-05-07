@@ -69,6 +69,22 @@ function onEachFeature(feature, layer) {
     });
 };
 
+<<<<<<< Updated upstream
+=======
+//THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
+L.geoJson(map2, {
+    onEachFeature: function(feature, layer) {
+      var label = L.marker(layer.getBounds().getCenter(), {
+        icon: L.divIcon({
+          className: "label",
+          html: layer.feature.properties.continent,
+          iconSize: [100, 40]
+        })
+      }).addTo(map);
+    }
+});
+
+>>>>>>> Stashed changes
 
 document.addEventListener('DOMContentLoaded', createmap)
 
@@ -463,17 +479,3 @@ window.onscroll = () => {
     }
 
 }
-//idea 1
-// //add geojson feature
-// var geojsonFeature = data
-// //adding popups to map2
-
-// L.geoJSON(geojsonFeature, {
-//     onEachFeature: function(feature, layer) {
-//       if (feature.properties && feature.properties.popupContent) {
-//         layer.bindPopup(feature.properties.popupContent);
-//       }
-//     }
-//   }).addTo(map2);
-
-//idea2
