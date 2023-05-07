@@ -69,8 +69,6 @@ function onEachFeature(feature, layer) {
     });
 };
 
-<<<<<<< Updated upstream
-=======
 //THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
 L.geoJson(map2, {
     onEachFeature: function(feature, layer) {
@@ -84,7 +82,6 @@ L.geoJson(map2, {
     }
 });
 
->>>>>>> Stashed changes
 
 document.addEventListener('DOMContentLoaded', createmap)
 
@@ -444,7 +441,7 @@ const chapters = {
 });
 */
 
-L.geoJSON(features)
+//L.geoJSON(features)
 
 let activeChapterName = 'blankintro';
 function setActiveChapter(chapterName) {
