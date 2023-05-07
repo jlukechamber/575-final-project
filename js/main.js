@@ -1,6 +1,7 @@
 //initilize map and set center of map with coordinates
 var map2;
 
+
 function createmap() {
 
     map2 = L.map('map2', {
@@ -29,11 +30,22 @@ function getData() {
         })
         .then(function (json) {
             var layer = L.geoJson(json, {
+                style: function (feature) {
+                    return{
+                        fillColor: '#e2e4f6',
+                        fillOpacity: 0.5,
+                        weight: 1,
+                        color: '#e98e88'
+                    }
+                    
+                },
                 onEachFeature:onEachFeature
             }).addTo(map2)
         })
 };
 
+
+//naur fook 
 // L.geoJSON('data/region_polygons.geojson', {
 //     style: function(properties) {
 //         return {
@@ -57,34 +69,19 @@ function onEachFeature(feature, layer) {
     layer.on('mouseover', function(e) {
         e.target.setStyle({
             fillOpacity: 0.8,
+            fillColor: '#e1f89c'
         });
     });
     //currently I just change the fillopactity to match the background but the highlight leaves a snail trail
     layer.on('mouseout', function(e) {
         e.target.setStyle({
-            fillOpacity: 0.16,
-            fillColor:'#e2e4f6' 
+            fillOpacity: 0.8,
+            fillColor: '#e2e4f6' 
             
         });
     });
 };
 
-<<<<<<< Updated upstream
-=======
-//THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
-L.geoJson(map2, {
-    onEachFeature: function(feature, layer) {
-      var label = L.marker(layer.getBounds().getCenter(), {
-        icon: L.divIcon({
-          className: "label",
-          html: layer.feature.properties.continent,
-          iconSize: [100, 40]
-        })
-      }).addTo(map);
-    }
-});
-
->>>>>>> Stashed changes
 
 document.addEventListener('DOMContentLoaded', createmap)
 
@@ -443,7 +440,7 @@ L.geoJson(map2, {
     }
 });
 
-L.geoJSON(chapters)
+
 
 let activeChapterName = 'blankintro';
 function setActiveChapter(chapterName) {
