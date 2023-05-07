@@ -1,5 +1,6 @@
 //initilize map and set center of map with coordinates
 var map2;
+//var myGeoJSON = ("data/region_polygons.geojson");
 
 
 function createmap() {
@@ -60,20 +61,20 @@ function getData() {
 
 function onEachFeature(feature, layer) {
     //bind hover
-    layer.bindTooltip(layer.feature.properties.region,{
-        className:"custom-tooltip"
+    layer.bindTooltip(layer.feature.properties.region, {
+        className: "custom-tooltip"
         //I think in this section we need to add the info within the popup
         //no
     })
 
-    layer.on('mouseover', function(e) {
+    layer.on('mouseover', function (e) {
         e.target.setStyle({
             fillOpacity: 0.8,
             fillColor: '#e1f89c'
         });
     });
-    //updated to match our illustrator mockup colors
-    layer.on('mouseout', function(e) {
+    //currently I just change the fillopactity to match the background but the highlight leaves a snail trail
+    layer.on('mouseout', function (e) {
         e.target.setStyle({
             fillOpacity: 0.8,
             fillColor: '#e2e4f6' 
@@ -90,7 +91,7 @@ var bounds = [
     [-156.184, 35.075],
     [-150.72115, 37.78104],
 
-  ];
+];
 //create the map
 const map = new mapboxgl.Map({
     container: 'map',
@@ -119,9 +120,9 @@ const map = new mapboxgl.Map({
         'layout': {
             // Make the layer visible by default.
             'visibility': 'visible'
-            },
+        },
     });
-    
+
     map.addSource('labels_cont', {
         'type': 'line',
         'url': 'mapbox://randimaes.clh7nsyu32f722bqjpfjoa1ft',
@@ -133,8 +134,8 @@ const map = new mapboxgl.Map({
         'layout': {
             // Make the layer visible by default.
             'visibility': 'visible'
-            },
-    },'labels_out');    
+        },
+    }, 'labels_out');
 
 
     //add continents   
@@ -143,129 +144,221 @@ const map = new mapboxgl.Map({
         'url': 'mapbox://randimaes.clh84t5dr0ifv2apth4kpger0-5wd92',
     });
     map.addLayer({
-        'id': 'continents',
-        'source': 'continents',
+        'id': 'continent',
+        'source': 'continent',
         'type': 'fill',
         'layout': {
             // Make the layer visible by default.
             'visibility': 'visible'
-            },
-    },'labels_cont');   
+        },
+        'paint': {
+            'line-color': '#877b59',
+            'line-width': 1
+        }
+    }, 'labels_cont');
 
     //add raster layers (x8 - spectrum, body, brain, mind, heart, soul, left brain, right brain)
     map.addSource('spectrum', {
-        'type': 'raster',
+        'type': 'vector',
         'url': 'mapbox://randimaes.30bu39ip',
     });
     map.addLayer({
         'id': 'spectrum',
         'source': 'spectrum',
-        'type': 'raster',
+        'type': 'vector',
         'layout': {
             // Make the layer visible by default.
             'visibility': 'visible'
-            },
-    },'continents');
+        },
+        'paint': {
+            'line-color': '#877b59',
+            'line-width': 1
+        }
+    }, 'continent');
 
+    //Annika started adding geojsons here
     map.addSource('body', {
-        'type': 'raster',
-        'url': 'mapbox://randimaes.5itdo644',
+        'type': 'vector',
+        'url': 'mapbox://randimaes.clhdlywby0gf42bo56qemvoao',
     });
     map.addLayer({
         'id': 'body',
         'source': 'body',
-        'type': 'raster',
+        'type': 'vector',
         'layout': {
             // Make the layer visible by default.
             'visibility': 'none'
-            },
-    },'continents');
+        },
+        'paint': {
+            'line-color': '#877b59',
+            'line-width': 1
+        }
+    }, 'continent');
 
     map.addSource('brain', {
-        'type': 'raster',
-        'url': 'mapbox://randimaes.0h1slq9h',
+        'type': 'vector',
+        'url': 'mapbox://randimaes.clhdlz8dq0qsk2imkdg1g6e3f',
     });
     map.addLayer({
         'id': 'brain',
         'source': 'brain',
-        'type': 'raster',
+        'type': 'vector',
         'layout': {
             // Make the layer visible by default.
             'visibility': 'none'
-            },
-    },'continents');
+        },
+        'paint': {
+            'line-color': '#877b59',
+            'line-width': 1
+        }
+    }, 'continent');
 
     map.addSource('mind', {
-        'type': 'raster',
-        'url': 'mapbox://randimaes.8f4h6lqq',
+        'type': 'vector',
+        'url': 'mapbox://randimaes.clhdlzk490a7d2hmb10k10cni',
     });
     map.addLayer({
         'id': 'mind',
         'source': 'mind',
-        'type': 'raster',
+        'type': 'vector',
         'layout': {
             // Make the layer visible by default.
             'visibility': 'none'
-            },
-    },'continents');
+        },
+        'paint': {
+            'line-color': '#877b59',
+            'line-width': 1
+        }
+    }, 'continent');
 
     map.addSource('heart', {
-        'type': 'raster',
-        'url': 'mapbox://randimaes.8kq924ep',
+        'type': 'vector',
+        'url': 'mapbox://randimaes.clhdlzv2j0omk2cob8g5ye3o6',
     });
     map.addLayer({
         'id': 'heart',
         'source': 'heart',
-        'type': 'raster',
+        'type': 'vector',
         'layout': {
             // Make the layer visible by default.
             'visibility': 'none'
-            },
-    },'continents');
-    
+        },
+        'paint': {
+            'line-color': '#877b59',
+            'line-width': 1
+        }
+    }, 'continent');
+
     map.addSource('soul', {
-        'type': 'raster',
-        'url': 'mapbox://randimaes.8onuks7u',
+        'type': 'vector',
+        'url': 'mapbox://randimaes.clhdm040v0o732jqvkm3o0b1y',
     });
     map.addLayer({
         'id': 'soul',
         'source': 'soul',
-        'type': 'raster',
+        'type': 'vector',
         'layout': {
             // Make the layer visible by default.
             'visibility': 'none'
-            },
-    },'continents');
+        },
+        'paint': {
+            'line-color': '#877b59',
+            'line-width': 1
+        }
+    }, 'continent');
 
     map.addSource('leftbrain', {
-        'type': 'raster',
-        'url': 'mapbox://randimaes.6bie16kd',
+        'type': 'vector',
+        'url': 'mapbox://randimaes.clhdlyhkl1xia2pqnwfzs8ib8',
     });
     map.addLayer({
         'id': 'leftbrain',
         'source': 'leftbrain',
-        'type': 'raster',
+        'type': 'vector',
         'layout': {
             // Make the layer visible by default.
             'visibility': 'none'
-            },
-    },'continents');
+        },
+        'paint': {
+            'line-color': '#877b59',
+            'line-width': 1
+        }
+    }, 'continent');
 
     map.addSource('rightbrain', {
-        'type': 'raster',
-        'url': 'mapbox://randimaes.2ane6eqv',
+        'type': 'vector',
+        'url': 'mapbox://randimaes.clhdly1n00qs32imkmwpiy0kc',
     });
     map.addLayer({
         'id': 'rightbrain',
         'source': 'rightbrain',
-        'type': 'raster',
+        'type': 'vector',
         'layout': {
             // Make the layer visible by default.
             'visibility': 'visible'
+        },
+        'paint': {
+            'line-color': '#877b59',
+            'line-width': 1
+        }
+
+    }, 'continent');
+
+
+});
+// After the last frame rendered before the map enters an "idle" state.
+map.on('idle', () => {
+    // If these two layers were not added to the map, abort 
+    if (!map.getLayer('continent') || !map.getLayer('body') || !map.getLayer('brain') || !map.getLayer('mind') || !map.getLayer('heart') || !map.getLayer('soul') || !map.getLayer('leftbrain') || !map.getLayer('rightbrain')) {
+        return;
+    }
+
+    // Enumerate ids of the layers.
+    const toggleableLayerIds = ['continent', 'body', 'brain', 'mind', 'heart', 'soul', 'leftbrain', 'rightbrain'];
+
+    // Set up the corresponding toggle button for each layer.
+    for (const id of toggleableLayerIds) {
+        // Skip layers that already have a button set up.
+        if (document.getElementById(id)) {
+            continue;
+        }
+
+        // Create a link.
+        const link = document.createElement('a');
+        link.id = id;
+        link.href = '#';
+        link.textContent = id;
+        link.className = 'active';
+
+        // Show or hide layer when the toggle is scrolled over.
+        link.onscroll = function (e) {
+            const scrolledLayer = this.textContent;
+            e.preventDefault();
+            e.stopPropagation();
+
+            const visibility = map.getLayoutProperty(
+                scrolledLayer,
+                'visibility'
+            );
+
+            // Toggle layer visibility by changing the layout object's visibility property.
+            if (visibility === 'visible') {
+                map.setLayoutProperty(scrolledLayer, 'visibility', 'none');
+                //what do I put for className
+                this.className = '';
+            } else {
+                this.className = 'active';
+                map.setLayoutProperty(
+                    scrolledLayer,
+                    'visibility',
+                    'visible'
+                );
             }
-    },'continents');
+        };
 
-
+        const layers = document.getElementById('menu');
+        layers.appendChild(link);
+    }
 });
 */
 
@@ -275,8 +368,8 @@ const chapters = {
         zoom: 14,
         pitch: 0,
         bearing: 0,
-        duration:5000,
-        speed:0.5
+        duration: 5000,
+        speed: 0.5
 
     },
     'intro2': {
@@ -285,10 +378,10 @@ const chapters = {
         pitch: 50,
         bearing: 0,
         duration: 3000,
-        speed:0.5
+        speed: 0.5
 
     },
-    
+
     'mbody': {
         bearing: 27,
         center: [-154.1422696, 35.7988407],
@@ -367,14 +460,14 @@ const chapters = {
         center: [-154.169, 35.226],
         zoom: 8,
         pitch: 64,
-        duration:3000
+        duration: 3000
     },
     'brain': {
         bearing: 7.2,
         center: [-153.5, 34],
         zoom: 8,
         pitch: 61,
-        duration:3000
+        duration: 3000
     },
     'mind': {
         bearing: 0,
@@ -427,6 +520,21 @@ const chapters = {
     }
 };
 
+function addLabels(feature, layer) {
+    var label = L.marker(layer.getBounds().getCenter(), {
+        icon: L.divIcon({
+            className: 'label',
+            html: feature.properties.contient
+        })
+    });
+    label.addTo(map2);
+}
+
+// Create a GeoJSON layer and add it to the map
+var geojsonLayer = L.geoJSON(myGeoJSON, {
+    onEachFeature: addLabels
+});
+geojsonLayer.addTo(map2);
 //THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
 /*L.geoJson(map2, {
     onEachFeature: function(features, layer) {
