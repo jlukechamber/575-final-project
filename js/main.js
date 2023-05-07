@@ -84,6 +84,8 @@ function onEachFeature(feature, layer) {
 };
 
 
+
+
 document.addEventListener('DOMContentLoaded', createmap)
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA';
