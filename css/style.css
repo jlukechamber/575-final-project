@@ -75,7 +75,7 @@ body {
     margin-left: 50%;
     font-family: sans-serif;
     overflow-y: scroll;
-    background-color: #fafafa;
+    background-color: #000000;
 }
 
 section {
@@ -102,3 +102,15 @@ section:last-child {
 }
 
 
+#conciousness {
+    color:#48bef5 
+}
+
+p {
+    text-align: justify;
+}
+
+img {
+    float: right;
+    margin: 20px;
+}
