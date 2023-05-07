@@ -114,3 +114,9 @@ img {
     float: right;
     margin: 20px;
 }
+
+.custom-tooltip{
+    transition: opacity 2s;
+    max-width: 200px;
+    white-space: pre-wrap;
+}

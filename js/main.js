@@ -72,7 +72,7 @@ function onEachFeature(feature, layer) {
             fillColor: '#e1f89c'
         });
     });
-    //currently I just change the fillopactity to match the background but the highlight leaves a snail trail
+    //updated to match our illustrator mockup colors
     layer.on('mouseout', function(e) {
         e.target.setStyle({
             fillOpacity: 0.8,
