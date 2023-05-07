@@ -1,5 +1,6 @@
 //initilize map and set center of map with coordinates
 var map2;
+
 function createmap() {
 
     map2 = L.map('map2', {
@@ -10,10 +11,11 @@ function createmap() {
         maxZoom: 15
     });
 
-    //Step 1: add the openstreet map tilelayer
-    var OpenStreetMap_Mapnik = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //add the openstreet map tilelayer
+    var OpenStreetMap_Mapnik = L.tileLayer('https://api.mapbox.com/styles/v1/randimaes/clhdjdvpd024j01qm1j8u7ckt/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA', {
         maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        //attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        accessToken: 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA'
     }).addTo(map2);
 
     getData();
@@ -32,12 +34,24 @@ function getData() {
         })
 };
 
+// L.geoJSON('data/region_polygons.geojson', {
+//     style: function(properties) {
+//         return {
+//             fillColor: '#e2e4f6',
+//             fillOpacity: '0.8',
+//             weight: 2,
+//             color: '#000'
+//         };
+//     }.addTo(map2)
+// });
+
 
 function onEachFeature(feature, layer) {
     //bind hover
     layer.bindTooltip(layer.feature.properties.region,{
         className:"custom-tooltip"
         //I think in this section we need to add the info within the popup
+        //no
     })
 
     layer.on('mouseover', function(e) {
@@ -49,6 +63,7 @@ function onEachFeature(feature, layer) {
     layer.on('mouseout', function(e) {
         e.target.setStyle({
             fillOpacity: 0.16,
+            fillColor:'#e2e4f6' 
             
         });
     });
@@ -67,7 +82,7 @@ L.geoJson(map2, {
     }
 });
 
-
+L.geoJSON(myGeojsonFeatures)
 
 document.addEventListener('DOMContentLoaded', createmap)
 
@@ -77,7 +92,7 @@ var bounds = [
     [-150.72115, 37.78104],
 
   ];
-//creae the map
+//create the map
 const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
