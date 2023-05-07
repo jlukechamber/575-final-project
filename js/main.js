@@ -415,8 +415,8 @@ const chapters = {
 };
 
 //THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
-L.geoJson(map2, {
-    onEachFeature: function(feature, layer) {
+/*L.geoJson(map2, {
+    onEachFeature: function(features, layer) {
       var label = L.marker(layer.getBounds().getCenter(), {
         icon: L.divIcon({
           className: "label",
@@ -426,8 +426,9 @@ L.geoJson(map2, {
       }).addTo(map2);
     }
 });
+*/
 
-L.geoJSON(chapters)
+L.geoJSON(features)
 
 let activeChapterName = 'blankintro';
 function setActiveChapter(chapterName) {
