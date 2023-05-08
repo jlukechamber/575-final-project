@@ -106,7 +106,6 @@ function getData() {
 //     }.addTo(map2)
 // });
 
-var quotes = [ { name: 'Empirical body', quote: 'Now he has departed from this strange world a little ahead of me. That means nothing. People like us, who believe in physics, know that the distinction between past, present, and future is only a stubbornly persistent illusion'}]
 
 //can I bind? this to ? maybe an array ? or something not in the geojson 
 function onEachFeature(feature, layer) {
