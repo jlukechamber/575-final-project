@@ -163,7 +163,7 @@ img {
 }
 
 .custom-tooltip{
-    transition: opacity 2s;
+    transition: opacity 1.5s;
     max-width: 200px;
     white-space: pre-wrap;
 }

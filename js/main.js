@@ -35,8 +35,9 @@ function getData() {
                     return {
                         fillColor: '#e2e4f6',
                         fillOpacity: 0.5,
-                        weight: 1,
-                        color: '#e98e88'
+                        weight: 2,
+                        color: '#e98e88',
+                         
                     }
 
                 },
@@ -44,6 +45,7 @@ function getData() {
             }).addTo(map2)
         })
 };
+  
 
 
 //naur fook 
@@ -532,13 +534,13 @@ const chapters = {
 //     label.addTo(map2);
 // }
 
-// Create a GeoJSON layer and add it to the map
-// var geojsonLayer = L.geoJSON(myGeoJSON, {
-//     onEachFeature: addLabels
-// });
-//geojsonLayer.addTo(map2);
+//Create a GeoJSON layer and add it to the map
+ /*var geojsonLayer = L.geoJSON(myGeoJSON, {
+   onEachFeature: addLabels
+});
+geojsonLayer.addTo(map2);
 //THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
-/*L.geoJson(map2, {
+L.geoJson(map2, {
     onEachFeature: function(features, layer) {
       var label = L.marker(layer.getBounds().getCenter(), {
         icon: L.divIcon({
