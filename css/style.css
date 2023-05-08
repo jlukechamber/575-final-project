@@ -145,15 +145,38 @@ section:last-child {
 
 p {
     text-align: justify;
+    font-family: 'Roboto';
+    font-weight: 100;
+}
+
+h3 {
+    font-family: 'Roboto';
+    font-weight: 900;
 }
 
 img {
+   
+    margin: 10px;
+    border-radius: 4px;
     float: right;
-    margin: 20px;
+
 }
 
 .custom-tooltip{
     transition: opacity 2s;
     max-width: 200px;
     white-space: pre-wrap;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    font-family: 'Roboto';
+    font-weight: 100;
+}
+
+h2{
+    font-family: 'lithops';
+    font-size: 48pt;
 }

@@ -12,8 +12,14 @@
 
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
     <style>
+         @font-face {
+            font-family: 'lithops';
+            src: url(Lithops-Regular.otf);
+        }
 
     </style>
 
@@ -29,15 +35,66 @@
         <div id="map"></div>
         <div id="features">
             <!-- put in another section (and add to array) so there is a different opening frame? with the credits to logan? changing (decreasing pitch is kinda a cool animation?) -->
-            <section id="blankintro" class="active">
+            <section id="blankintro" class="active" style="color: rgb(255, 255, 233);">
+                <h3>The brain and mind are not the same...</h3>
+                <p>Like explorers venturing into uncharted seas, neuroscience has endeavored to map
+                    the 10s of millions of neurons and connections that make up our brains. Some believe
+                    that the key to unlocking the mysteries of the mind is in mapping the connections between
+                    neurons and great advancements in connectomics – the field of neuroscience that creates maps –
+                    has produced neural maps of worms, flies, mice, and even parts of the human brain. However,
+                    philosophy has, throughout the course of human civilization, proposed that the mind is something
+                    more than the connection in the brain. Something intangible. Something that perhaps cannot be
+                    mapped in the same way. The thoughts, ideas, concepts, sensations, emotions, intuitions, and
+                    imaginations that we conceive of as the mind exist somewhere in a space between. A space that
+                    remains perhaps unquantifiable by even the most high-fidelity map of every neuron and every
+                    connection in the human brain. Science, for all its’ utility and ability to answer and explain
+                    complex phenomena, may be unable to explain the intricacies and nuances of our minds. Explorers
+                    of a different kind venture inward into the vast oceans of our mind in search of the same –
+                    perhaps unanswerable – questions that have driven human thought for millennia.</p>
+                <br>
+                <br>
+                <br>
                 <h3>Unpacking the black box...</h3>
+                <p>The contents of the mind have been referred to as a “black box” of the unknown.
+                    First conceptualized by American psychologist and behavioralist B.F. Skinner,
+                    the box describes that which traditional behavioralists believe to be unobservable.
+                    Skinner believed that what we perceive of as free will is actually an illusion created
+                    by repeated reinforcement of responses to stimulus. To behavioralists like Skinner,
+                    the mind exists as a black box – we know how it functions and can alter the outputs
+                    (response) by altering the inputs (stimulus). Others argue that this is not the entire story.
+                    That consciousness is more nuanced, and that the black box can be opened. Free will is deeper
+                    than stimulus and response, and that the perception of having free will is enough to confirm
+                    its existence. Opening Skinner’s “black box” requires reviewing all the contents between stimulus
+                    and response to reconstruct the oneness of the mind.</p>
+                <br>
+
+                <p>We have mastered our understanding and organization of the external world through science,
+                    however, we have yet to master to the same degree our understanding and
+                    organization of the experience of the internal world through philosophy.</p>
+                <br>
+
+                <p>What follows is by no means an exhaustive list, but merely a connecting and arranging of ways in
+                    which people throughout the history of philosophy have sought to unpack the black box.</p>
+
+
             </section>
             <section id="intro2">
-                <h2><br><br><br>Welcome to the Continents of the Mind<br><br><br></h2>
+                <h1 style="text-align: center; font-size:xx-large; font-family: lithops;"><br><br><br><br>The Continents of the Mind</h1>
+                <p style="text-align: center; font-size: 10pt;">Annika Anderson, Luke Chamberlain, Randi Selvey
+                    <br>
+                    Based on the work of Dr. Logan Edwards, UW-Whitewater
+                </p><br><br>
+                <p>Much like early attempts by explorers to chart previously unexplored lands, this map is rudimentary
+                    and far from complete.
+                    <br><br><br>
+                    A first blurry-eyed sketch with eyes not yet fully opened...
+                </p>
+                <br><br>
+
             </section>
             <section id="mbody" style="color:rgb(121, 121, 255)">
-                <h3><br><br><br>Body</h3>
-                <p>
+                <h2 style="clear:right"><br><br><br>Body</h2>
+                <div class="clearfix">
                     <img src="../assets/gandhi.jpg" alt="">
                     We begin our journey through the continents at the mental conception of the body.
                     Mahatma Gandhi, known for his philosophies of non-violence, viewed the physical
@@ -46,44 +103,48 @@
                     violence, or the injuring or killing of another living being. The requirements to
                     maintain the human body (food, water, shelter being at the bottom of Maslow’s
                     hierarchy of needs) makes violence, in Gandhi’s eyes, unavoidable.
-                    The body continent is divided into four regions <em>the empirical</em>, <em>the anatomical</em>, <em>the experiential</em>,
+                    The body continent is divided into four regions <em>the empirical</em>, <em>the anatomical</em>,
+                    <em>the experiential</em>,
                     and <em>the instinctual</em> conceptions of the body.
 
 
-                </p>
+                </div>
             </section>
-            <section id="conciousness" style= "color:#48bef5">
-                <h3><br><br><br>Conscious Mind</h3>
-                <p>
+            <section id="conciousness" style="color:#48bef5">
+                <h2 style="font-size: 36pt;"><br><br><br>Conscious Mind</h2>
+                <div class="clearfix">
                     <img src="../assets/descartes.jpg" alt="">
                     The 17th century French philosopher Renes Descartes proposed in the famous line
                     “I think therefore I am”, establishing the conscious mind as an entity wholly distinct
                     from the body. Our mind’s ability to think about thinking is the foundation of
                     consciousness. Even if we doubt the existence of everything else, the mind is aware
-                    of the existence of itself. 
+                    of the existence of itself.
                     <br><br>
-                    
-                    Jean Paul Sartre, in his 1943 text <em>Being and Nothingness</em>, built upon Descartes’ ideas. Consciousness
+
+                    Jean Paul Sartre, in his 1943 text <em>Being and Nothingness</em>, built upon Descartes’ ideas.
+                    Consciousness
                     (or being) could be thought of as consisting of two types: <em>being-in-itself</em> (left) and
                     <em>being-for-itself</em>
                     (right). <em>Being-in-itself</em> concerns the being – or mere existence - of objects. In Sartre’s
                     mind,
                     this type of being was not the place of humans but rather objects. A person working as a waiter is
                     not
-                    primarily a waiter (<em>being-in-itself</em>), rather a person is primarily a person (<em>being-for-itself</em>) who
+                    primarily a waiter (<em>being-in-itself</em>), rather a person is primarily a person
+                    (<em>being-for-itself</em>) who
                     just
                     happens to serve the function of a waiter.
                     <br><br>
-                    Another way to think of <em>being-for-itself</em> is the idea of you as a person. Sartre said that to act in good faith, an
+                    Another way to think of <em>being-for-itself</em> is the idea of you as a person. Sartre said that
+                    to act in good faith, an
                     individual must be aware of their own consciousness through self-reflection. To not only be aware of
                     yourself,
                     but to be aware of your own self-reflection.
 
-                </p>
+                </div>
             </section>
             <section id="subjectivity" style="color: rgb(247, 245, 141);">
-                <h3><br><br><br>Subjectivity</h3>
-                <p>
+                <h2><br><br><br>Subjectivity</h2>
+                <div class="clearfix">
                     <img src="../assets/kierkegaard.jpg" alt="">
                     How can two people have radically different experiences of the exact same thing?
                     Two people walking together as a rainstorm starts have wildly different reactions – one
@@ -91,42 +152,45 @@
                     (a rainstorm) can produce multiple interpretations due to differences in perception,
                     mood, feelings, abilities, creativity, language etc. gathered from previous experience.
                     <br><br>
-                    
-                    The subjectivity of the self can be conceptualized as <em>"me as a person"</em> and <em>"I as myself"</em>. 
+
+                    The subjectivity of the self can be conceptualized as <em>"me as a person"</em> and <em>"I as
+                        myself"</em>.
                     In Buddhism,
                     the self is thought of as only an illusion to be deconstructed. Paradoxically, the nature of the
                     self can
                     only be known through the “inquiring spirit” that doubts and negates self.
-                    
-                    As Danish philosopher Soren Kierkegaard (pictured) famously said; “subjectivity is truth.”
-                    
 
-                </p>
+                    As Danish philosopher Soren Kierkegaard (pictured) famously said; “subjectivity is truth.”
+
+
+                </div>
             </section>
             <section id="ego" style="color:rgb(255, 98, 177)">
-                <h3><br><br><br>Ego</h3>
-                <p>
+                <h2><br><br><br>Ego</h2>
+                <div class="clearfix">
                     <img src="../assets/freud.jpg" alt="">
                     The ego moderates the unrealistic id and the external world to govern how one ought to act in the
                     world.
-                    The left region of the Ego continent is concerned with the ego <em>“for itself”</em>, or the selfish ego.
+                    The left region of the Ego continent is concerned with the ego <em>“for itself”</em>, or the selfish
+                    ego.
                     Sigmund Freud’s pleasure principle, the foundation of psychological egoism, suggests that all
                     behavior
                     is motivated by self-interest seeking to maximize pleasure and minimize displeasure. Behaving in
                     this way,
-                    however, is untenable and must be balanced by the ego <em>“within itself”</em>, the altruistic ego. Debate
+                    however, is untenable and must be balanced by the ego <em>“within itself”</em>, the altruistic ego.
+                    Debate
                     persists
                     to whether true altruism is possible if the performer of the act receives a reward in the form of
                     self-gratification for performing a good deed.
 
-                </p>
+                </div>
             </section>
             <section id="antiego" style="color:rgb(255, 80, 109)">
-                <h3><br><br><br>Anti-Ego</h3>
-                <p>
-                    
+                <h2><br><br><br>Anti-Ego</h2>
+                <div class="clearfix">
                     The anti-ego is divided into four conceptual regions: the <em>ideal ego</em> (top left),
-                    the <em>conscience</em> (bottom left), the <em>individual soul</em> (top right), and the <em>eternal soul</em>
+                    the <em>conscience</em> (bottom left), the <em>individual soul</em> (top right), and the <em>eternal
+                        soul</em>
                     (bottom right).
                     <br><br>
                     <img src="../assets/maslow.jpg" alt="">
@@ -138,7 +202,8 @@
                     The <em>conscience</em> – Freud’s superego – is the inner voice that tells us when we’ve done
                     something wrong. It is the foil to the id and is learned from the outside world (parents)
                     at an early age.
-                    The <em>divine individual</em> is the way in which western philosophy beginning in ancient Greece has
+                    The <em>divine individual</em> is the way in which western philosophy beginning in ancient Greece
+                    has
                     conceptualized
                     the soul. It is something that a person can risk and lose and that, after death, endures as a shade
                     in the
@@ -146,105 +211,132 @@
                     soul is a
                     part of the soul of God and that we are part of an interconnected collective soul.
 
-                </p>
+                </div>
             </section>
             <section id="other" style="color:rgb(255, 80, 109)">
-                <h3><br><br><br>Others</h3>
-                <p>
+                <h2><br><br><br>Others</h2>
+                <div class="clearfix">
                     <img src="../assets/marx.jpg" alt="">
-                    The opposite of the self is the other. If the self exists, then the other exists as well. 
-                    The environment in which the self exists is the other that is in constant interaction with the self. 
-                    Materialism is the idea that all things develop as a product of their environment, and that change occurs 
-                    when contradictions exist in the conditions of the environment (e.g., organisms evolve when there is a 
-                    contradiction between their adaptive characteristics and their environment). The interaction between the 
-                    self and the other can be conceptualized as <em>"others in me"</em> (right) and <em>"me in others"</em> (left).
-                </p>
+                    The opposite of the self is the other. If the self exists, then the other exists as well.
+                    The environment in which the self exists is the other that is in constant interaction with the self.
+                    Materialism is the idea that all things develop as a product of their environment, and that change
+                    occurs
+                    when contradictions exist in the conditions of the environment (e.g., organisms evolve when there is
+                    a
+                    contradiction between their adaptive characteristics and their environment). The interaction between
+                    the
+                    self and the other can be conceptualized as <em>"others in me"</em> (right) and <em>"me in
+                        others"</em> (left).
+                </div>
             </section>
             <section id="will" style="color:rgb(255, 98, 177)">
-                <h3><br><br><br>Will</h3>
-                <p>
+                <h2><br><br><br>Will</h2>
+                <div class="clearfix">
                     <img src="../assets/schopenhauer.jpg" alt="">
-                    19th century German philosopher Arthur Schopenhauer in his work <em>The World as Will and Representation</em> 
-                    coined the term <em>wille zum leben</em> (the will to life), a force within all of us more powerful than reason, 
-                    logic, or emotion. This is a mindless, aimless impulse that serves as the bedrock for all our instincts 
-                    and the foundation of all life. Schopenhauer presents this as the driving force behind why much of our social lives are 
+                    19th century German philosopher Arthur Schopenhauer in his work <em>The World as Will and
+                        Representation</em>
+                    coined the term <em>wille zum leben</em> (the will to life), a force within all of us more powerful
+                    than reason,
+                    logic, or emotion. This is a mindless, aimless impulse that serves as the bedrock for all our
+                    instincts
+                    and the foundation of all life. Schopenhauer presents this as the driving force behind why much of
+                    our social lives are
                     dictated to such an extent by romance and love.
                     <br><br>
-                    The continent is divided into three parts. The <em>collective will</em> exists through social conditioning, 
-                    norms, etc. and sits below the <em>anti-ego’s will</em> (right) and the <em>ego’s will</em> (left). The anti-ego’s will 
+                    The continent is divided into three parts. The <em>collective will</em> exists through social
+                    conditioning,
+                    norms, etc. and sits below the <em>anti-ego’s will</em> (right) and the <em>ego’s will</em> (left).
+                    The anti-ego’s will
                     is dictated by morality, and the ego’s by reality.
-                </p>
+                </div>
             </section>
             <section id="freedom" style="color: rgb(247, 245, 141);">
-                <h3><br><br><br>Freedom</h3>
-                <p>
+                <h2><br><br><br>Freedom</h2>
+                <div class="clearfix">
                     <img src="../assets/cliff.jpg" alt="">
-                    There are two regions in the Freedom continent: <em>authoritative freedom</em> (i.e., freedom of thought and feeling), 
-                    and <em>transformative freedom</em> (i.e., freedom of action and creation). Kierkegaard considers a man standing 
-                    on the edge of a tall building. The man looks over the edge and is overcome by two fears simultaneously – the fear 
-                    of falling, and the fear of having a sudden impulse to jump. The second fear comes from the man realizing that 
-                    he has the complete freedom to choose. Kierkegaard calls this the “dizziness of freedom,” and suggests that we 
-                    experience it whenever we make a moral decision. Rather than becoming overcome by this anxiety, we can instead 
-                    use it to enhance our self-determination and the sense of responsibility and ownership we feel over the decisions 
+                    There are two regions in the Freedom continent: <em>authoritative freedom</em> (i.e., freedom of
+                    thought and feeling),
+                    and <em>transformative freedom</em> (i.e., freedom of action and creation). Kierkegaard considers a
+                    man standing
+                    on the edge of a tall building. The man looks over the edge and is overcome by two fears
+                    simultaneously – the fear
+                    of falling, and the fear of having a sudden impulse to jump. The second fear comes from the man
+                    realizing that
+                    he has the complete freedom to choose. Kierkegaard calls this the “dizziness of freedom,” and
+                    suggests that we
+                    experience it whenever we make a moral decision. Rather than becoming overcome by this anxiety, we
+                    can instead
+                    use it to enhance our self-determination and the sense of responsibility and ownership we feel over
+                    the decisions
                     we make.
 
-                </p>
+                </div>
             </section>
-            <section id="unconsciousness" style= "color:#48bef5">
-                <h3><br><br><br>Unconscious Mind</h3>
-                <p>
+            <section id="unconsciousness" style="color:#48bef5">
+                <h2 style="font-size: 36pt;"><br><br><br>Unconscious Mind</h2>
+                <div class="clearfix">
                     <img src="../assets/collective_uncon.png" alt="">
-                    When a smell or an image unexpectedly conjures up an old memory you had thought was long forgotten, 
-                    your mind is delving into the unconscious - the place containing the memories and impulses of which 
-                    in our day-to-day lives we are unaware. The <em>collective unconscious</em> is a concept introduced by psychiatrist 
-                    Carl Jung that represents a form of the unconscious that is common to all humankind regardless of culture. 
-                    Evidence for the existence of the collective unconscious is observable in people from opposite sides of the world having dreams of imagery reminiscent of a shared mythology. This, Jung posits, suggests that these images come from a shared origin in the mind.
+                    When a smell or an image unexpectedly conjures up an old memory you had thought was long forgotten,
+                    your mind is delving into the unconscious - the place containing the memories and impulses of which
+                    in our day-to-day lives we are unaware. The <em>collective unconscious</em> is a concept introduced
+                    by psychiatrist
+                    Carl Jung that represents a form of the unconscious that is common to all humankind regardless of
+                    culture.
+                    Evidence for the existence of the collective unconscious is observable in people from opposite sides
+                    of the world having dreams of imagery reminiscent of a shared mythology. This, Jung posits, suggests
+                    that these images come from a shared origin in the mind.
                     <br><br>
-                    Sitting above the <em>collective unconscious</em> are the <em>unconscious body</em> (left) and <em>unconscious mind</em> (right). 
-                    According to Freud, there exists a vast unconscious mind below the conscious mental processes 
+                    Sitting above the <em>collective unconscious</em> are the <em>unconscious body</em> (left) and
+                    <em>unconscious mind</em> (right).
+                    According to Freud, there exists a vast unconscious mind below the conscious mental processes
                     of which we are aware.
 
-                </p>
+                </div>
             </section>
             <section id="objectivity" style="color: rgb(247, 245, 141);">
-                <h3><br><br><br>Objectivity</h3>
-                <p>
+                <h2><br><br><br>Objectivity</h2>
+                <div class="clearfix">
                     <img src="../assets/nietzsche.jpg" alt="">
-                    A debate as old as philosophy: nature (right) vs nurture (left). Does our environment make us what we are (nurture), or 
-                    does our genetic blueprint define us (nature)? Nietzsche claims, somewhat paradoxically, that we are both fated to be 
-                    as we are, and that we can create our own realization of ourselves. These seemingly contradictory notions can be simultaneously 
+                    A debate as old as philosophy: nature (right) vs nurture (left). Does our environment make us what
+                    we are (nurture), or
+                    does our genetic blueprint define us (nature)? Nietzsche claims, somewhat paradoxically, that we are
+                    both fated to be
+                    as we are, and that we can create our own realization of ourselves. These seemingly contradictory
+                    notions can be simultaneously
                     true. Our minds are formed by both the environment in which we are raised, and our genetic code.
-                </p>
+                </div>
             </section>
             <section id="body" style="color:rgb(121, 121, 255)">
-                <h3> <br><br><br> The Body</h3>
-                <p>The mind exists, not just in one place at one time but within the interconnections 
-                </p>
+                <h1> <br><br><br><br> The Body</h1>
+                <div class="clearfix">
+                    <img src="../assets/nietzsche.jpg" alt="">
+                    The mind exists, not just in one place at one time but across five planes of consciousness.
+                </div>
             </section>
-            <section id="brain">
-                <h3> <br><br><br> The Brain</h3>
-                <p>This camera move will trigger the "Brain" section of the color spectrum to be highlighted.</p>
+            <section id="brain" style="color:#48bef5">
+                <h1> <br><br><br><br> The Brain</h1>
+
             </section>
-            <section id="mind">
-                <h3> <br><br><br> The Mind</h3>
+            <section id="mind" style="color: rgb(247, 245, 141);">
+                <h1> <br><br><br> The Mind</h1>
                 <p>The mind section of the spectrum will turn on and the rest of the background will fade out.</p>
             </section>
-            <section id="heart">
-                <h3> <br><br><br> The Heart</h3>
+            <section id="heart" style="color:rgb(255, 98, 177)">
+                <h1> <br><br><br> The Heart</h1>
                 <p>the heart part of the spectrum will turn on and the rest will fade out</p>
             </section>
-            <section id="soul">
-                <h3> <br><br><br> The Soul</h3>
+            <section id="soul" style="color:rgb(255, 80, 109)">
+                <h1> <br><br><br> The Soul</h1>
                 <p>the soul section of the spectrum will turn on and the rest will fade out</p>
             </section>
             <section id="right_brain">
-                <h3> <br><br><br> The Right Brain</h3>
+                <h1> <br><br><br> The Right Brain</h1>
                 <p>People think about the right side of the brain as more emotional and creative.
                     Left brain - right brain maps on to this. The right side of the color spectrum will highlight.
                 </p>
             </section>
             <section id="left_brain">
-                <h3> <br><br><br> The Left Brain</h3>
+                <h1> <br><br><br> The Left Brain</h1>
                 <p>People think of the left brain as more logical and scientific.
                     The left side brain section of the spectrum will highlight.
                 </p>

@@ -32,15 +32,15 @@ function getData() {
         .then(function (json) {
             var layer = L.geoJson(json, {
                 style: function (feature) {
-                    return{
+                    return {
                         fillColor: '#e2e4f6',
                         fillOpacity: 0.5,
                         weight: 1,
                         color: '#e98e88'
                     }
-                    
+
                 },
-                onEachFeature:onEachFeature
+                onEachFeature: onEachFeature
             }).addTo(map2)
         })
 };
@@ -77,8 +77,8 @@ function onEachFeature(feature, layer) {
     layer.on('mouseout', function (e) {
         e.target.setStyle({
             fillOpacity: 0.8,
-            fillColor: '#e2e4f6' 
-            
+            fillColor: '#e2e4f6'
+
         });
     });
 };
@@ -99,8 +99,8 @@ const map = new mapboxgl.Map({
     container: 'map',
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/randimaes/clh418hoa019301p477eg0jbm',
-    center: [-152.63623, 35.979111],
-    zoom: 14,
+    center: [-152.63723, 35.968111],
+    zoom: 15,
     pitch: 0,
     maxBounds: bounds
     //lessen the pitch but increase the zoom 
@@ -366,8 +366,8 @@ map.on('idle', () => {
 
 const chapters = {
     'blankintro': {
-        center: [-152.63623, 35.979111],
-        zoom: 14,
+        center: [-152.63723, 35.968111],
+        zoom: 15,
         pitch: 0,
         bearing: 0,
         duration: 5000,
