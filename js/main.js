@@ -60,7 +60,53 @@ function getData() {
                 onEachFeature: onEachFeature
             }).addTo(map2)
         })
+
+    fetch("data/mind_continents.geojson")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (json) {
+            var layer = L.geoJson(json, {
+                interactive:false,
+                style: function (feature) {
+                    return {
+                        opacity: 0,
+                        fillOpacity: 0
+                    }
+
+                },
+                onEachFeature: function(features, layer) {
+                    var label = L.marker(layer.getBounds().getCenter(), {
+                      icon: L.divIcon({
+                        className: "label",
+                        html: layer.feature.properties.name,
+                        iconSize: [100, 40]
+                      })
+                    }).addTo(map2);
+                }
+            }).addTo(map2)
+        })
 };
+
+
+//Create a GeoJSON layer and add it to the map
+/*var geojsonLayer = L.geoJSON(myGeoJSON, {
+    onEachFeature: addLabels
+ });
+ geojsonLayer.addTo(map2);
+ //THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
+ L.geoJson(map2, {
+     onEachFeature: function(features, layer) {
+       var label = L.marker(layer.getBounds().getCenter(), {
+         icon: L.divIcon({
+           className: "label",
+           html: layer.feature.properties.continent,
+           iconSize: [100, 40]
+         })
+       }).addTo(map2);
+     }
+ });*/
+ 
   
 
 
@@ -76,13 +122,13 @@ function getData() {
 //     }.addTo(map2)
 // });
 
+var quotes = [ { name: 'Empirical body', quote: 'Now he has departed from this strange world a little ahead of me. That means nothing. People like us, who believe in physics, know that the distinction between past, present, and future is only a stubbornly persistent illusion'}]
 
+//can I bind? this to ? maybe an array ? or something not in the geojson 
 function onEachFeature(feature, layer) {
     //bind hover
     layer.bindTooltip(layer.feature.properties.region, {
         className: "custom-tooltip"
-        //I think in this section we need to add the info within the popup
-        //no
     })
 
     layer.on('mouseover', function (e) {
@@ -550,24 +596,6 @@ const chapters = {
 //     label.addTo(map2);
 // }
 
-//Create a GeoJSON layer and add it to the map
- /*var geojsonLayer = L.geoJSON(myGeoJSON, {
-   onEachFeature: addLabels
-});
-geojsonLayer.addTo(map2);
-//THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
-L.geoJson(map2, {
-    onEachFeature: function(features, layer) {
-      var label = L.marker(layer.getBounds().getCenter(), {
-        icon: L.divIcon({
-          className: "label",
-          html: layer.feature.properties.continent,
-          iconSize: [100, 40]
-        })
-      }).addTo(map2);
-    }
-});
-*/
 
 
 
@@ -591,7 +619,7 @@ function setActiveChapter(chapterName) {
 function isElementOnScreen(id) {
     const element = document.getElementById(id);
     const bounds = element.getBoundingClientRect();
-    return bounds.top < window.innerHeight && bounds.bottom > 0;
+    return bounds.top < (window.innerHeight/2) && bounds.bottom > 0;
 }
 
 // On every scroll event, check which element is on screen

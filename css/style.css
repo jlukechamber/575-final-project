@@ -12,6 +12,7 @@
 /*this changes type color*/
 #features {
     color: blueviolet;
+
 }
 
 #map2 {
@@ -25,6 +26,9 @@
     color: red !important;
 }
 
+.label{
+    pointer-events: none !important;
+}
 
 #openpage {
     position: relative;
@@ -73,6 +77,7 @@ body {
 #features {
     width: 50%;
     margin-left: 50%;
+    padding-bottom:50%;
     font-family: sans-serif;
     overflow-y: scroll;
     background-color: #000000;
@@ -164,9 +169,12 @@ img {
 
 .custom-tooltip{
     transition: opacity 1.5s;
-    max-width: 200px;
-    white-space: pre-wrap;
+    white-space: normal !important;
+    max-width:300px;
+    min-width:100px;
+
 }
+
 
 .clearfix::after {
     content: "";
