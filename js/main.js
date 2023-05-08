@@ -35,15 +35,32 @@ function getData() {
                     return{
                         fillColor: '#e2e4f6',
                         fillOpacity: 0.5,
-                        weight: 1,
-                        color: '#e98e88'
+                        weight: 2,
+                        color: '#e98e88',
+                         
                     }
                     
                 },
                 onEachFeature:onEachFeature
-            }).addTo(map2)
-        })
+            })
+            
+            .addTo(map2);
+// ???this was me trying to make contour lines why is it impossible
+            // Create the second layer with a larger weight and a different color
+            // var layer2 = L.geoJson(json, {
+            //     style: {
+            //         weight: 4,
+            //         color: '##ba716c',
+            //        // dashOffset: 2
+            //     },
+            //     onEachFeature: onEachFeature
+            // }).addTo(map2);
+            
+            // // Bring the second layer to the back so it doesn't cover the first layer
+            // layer2.bringToBack();
+        });
 };
+  
 
 
 //naur fook 
