@@ -26,12 +26,46 @@
     font-family: 'Roboto';
 }
 
-.label{
+.label {
     pointer-events: none !important;
     color: white;
     font-size: 18px;
+    /*text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;*/
 }
 
+.body {
+    text-shadow: 1px 1px 0 #2596be, -1px -1px 0 #2596be, 1px -1px 0 #2596be, -1px 1px 0 #2596be;
+}
+
+.conscious {
+    text-shadow: 1px 1px 0 #94d4db, -1px -1px 0 #94d4db, 1px -1px 0 #94d4db, -1px 1px 0 #94d4db;
+
+}
+.subjectivity{
+    text-shadow: 0.5px 0.5px 0 #d0e068, -0.5px -0.5px 0 #d0e068, 0.5px -0.5px 0 #d0e068, -0.5px 0.5px 0 #d0e068;
+
+}
+.ego{
+    text-shadow: 1px 1px 0 #a44c8c, -1px -1px 0 #a44c8c, 1px -1px 0 #a44c8c, -1px 1px 0 #a44c8c;
+}
+.antiego{
+    text-shadow: 1px 1px 0 #500c34, -1px -1px 0 #500c34, 1px -1px 0 #500c34, -1px 1px 0 #500c34;
+}
+.others{
+    text-shadow: 1px 1px 0 #780414, -1px -1px 0 #780414, 1px -1px 0 #780414, -1px 1px 0 #780414;
+}
+.will{
+    text-shadow: 1px 1px 0 #ac2c94, -1px -1px 0 #ac2c94, 1px -1px 0 #ac2c94, -1px 1px 0 #ac2c94;
+}
+.freedom{
+    text-shadow: 0.5px 0.5px 0 #c9e484, -0.5px -0.5px 0 #c9e484, 0.5px -0.5px 0 #c9e484, -0.5px 0.5px 0 #c9e484;
+}
+.unconscious{
+    text-shadow: 1px 1px 0 #9cd4dc, -1px -1px 0 #9cd4dc, 1px -1px 0 #9cd4dc, -1px 1px 0 #9cd4dc;
+}
+.objectivity{
+    text-shadow: 1px 1px 0 #9c8c2c, -1px -1px 0 #9c8c2c, 1px -1px 0 #9c8c2c, -1px 1px 0 #9c8c2c;
+}
 /* #openpage {
     position: relative;
         top: 0;
@@ -58,6 +92,7 @@ body {
     height: 100%;
     z-index: 0;
 }
+
 /* im so confused how there is two of the same thing doing different things but it is working? */
 #map {
     position: fixed;
@@ -71,7 +106,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 2;
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
 
@@ -79,7 +114,7 @@ body {
 #features {
     width: 50%;
     margin-left: 50%;
-    padding-bottom:50%;
+    padding-bottom: 50%;
     font-family: sans-serif;
     overflow-y: scroll;
     background-color: #000000;
@@ -117,9 +152,9 @@ section:last-child {
     width: 120px;
     border: 1px solid rgba(0, 0, 0, 0.4);
     font-family: 'Open Sans', sans-serif;
-    }
-     
-    #menu a {
+}
+
+#menu a {
     font-size: 13px;
     color: #404040;
     display: block;
@@ -129,25 +164,25 @@ section:last-child {
     text-decoration: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     text-align: center;
-    }
-     
-    #menu a:last-child {
+}
+
+#menu a:last-child {
     border: none;
-    }
-     
-    #menu a:hover {
+}
+
+#menu a:hover {
     background-color: #f8f8f8;
     color: #404040;
-    }
-     
-    #menu a.active {
+}
+
+#menu a.active {
     background-color: #3887be;
     color: #ffffff;
-    }
-     
-    #menu a.active:hover {
+}
+
+#menu a.active:hover {
     background: #3074a4;
-    }
+}
 
 
 p {
@@ -162,14 +197,14 @@ h3 {
 }
 
 img {
-   
+
     margin: 10px;
     border-radius: 4px;
     float: right;
 
 }
 
-.custom-tooltip{
+.custom-tooltip {
     transition: opacity 1.5s;
     white-space: normal !important;
     max-width:500px;
@@ -186,7 +221,7 @@ img {
     font-weight: 100;
 }
 
-h2{
+h2 {
     font-family: 'lithops';
     font-size: 48pt;
 }
