@@ -61,7 +61,7 @@ function getData() {
             }).addTo(map2)
         })
 
-    fetch("data/mind_continents.geojson")
+    fetch("data/point.geojson")
         .then(function (response) {
             return response.json();
         })
@@ -75,16 +75,19 @@ function getData() {
                     }
 
                 },
+                
                 onEachFeature: function(features, layer) {
-                    var label = L.marker(layer.getBounds().getCenter(), {
+                    var coordinates = features.geometry.coordinates;
+                    var latlng = new L.latLng(coordinates[1],coordinates[0])
+                    var label = L.marker(latlng, {
                       icon: L.divIcon({
-                        className: "label",
+                        className: "label " + layer.feature.properties.name,
                         html: layer.feature.properties.name,
                         iconSize: [100, 40]
                       })
                     }).addTo(map2);
                 }
-            }).addTo(map2)
+            })
         })
 };
 
