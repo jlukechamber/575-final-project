@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', createmap)
 mapboxgl.accessToken = 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA';
 var bounds = [
     [-156.184, 35.075],
-    [-150.72115, 37.78104],
+    [-148.72115, 37.78104],
 
 ];
 //create the map
