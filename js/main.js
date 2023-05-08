@@ -22,7 +22,23 @@ function createmap() {
 
     getData();
 };
-
+/*var geojsonLayer = L.geoJSON(myGeoJSON, {
+    onEachFeature: addLabels
+ });
+ geojsonLayer.addTo(map2);
+ //THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
+ L.geoJson(map2, {
+     onEachFeature: function(features, layer) {
+       var label = L.marker(layer.getBounds().getCenter(), {
+         icon: L.divIcon({
+           className: "label",
+           html: layer.feature.properties.continent,
+           iconSize: [100, 40]
+         })
+       }).addTo(map2);
+     }
+ });
+ */
 function getData() {
     //load the data--> geojson file can be switched out for mapand.geojson
     fetch("data/region_polygons.geojson")
@@ -578,6 +594,7 @@ const chapters = {
 //     });
 //     label.addTo(map2);
 // }
+
 
 
 
