@@ -14,7 +14,7 @@ function createmap() {
     });
 
     //add the openstreet map tilelayer
-    var OpenStreetMap_Mapnik = L.tileLayer('https://api.mapbox.com/styles/v1/randimaes/clhf5doc300w401qp81yh0wb0/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA', {
+    var OpenStreetMap_Mapnik = L.tileLayer('https://api.mapbox.com/styles/v1/randimaes/clhf6m9bh008001qn98oy3z17/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA', {
         maxZoom: 19,
         //attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         accessToken: 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA'
@@ -49,10 +49,10 @@ function getData() {
             var layer = L.geoJson(json, {
                 style: function (feature) {
                     return {
-                        fillColor: '#e2e4f6',
-                        fillOpacity: 0.5,
-                        weight: 2,
-                        color: '#e98e88',
+                        fillColor: '#BFC4BF',
+                        fillOpacity: 0.8,
+                        weight: 1.5,
+                        color: '#FFFFFF',
                          
                     }
 
@@ -136,14 +136,14 @@ function onEachFeature(feature, layer) {
     layer.on('mouseover', function (e) {
         e.target.setStyle({
             fillOpacity: 0.8,
-            fillColor: '#e1f89c'
+            fillColor: '#010901'
         });
     });
     //currently I just change the fillopactity to match the background but the highlight leaves a snail trail
     layer.on('mouseout', function (e) {
         e.target.setStyle({
             fillOpacity: 0.8,
-            fillColor: '#e2e4f6'
+            fillColor: '#BFC4BF'
 
         });
     });

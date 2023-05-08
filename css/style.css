@@ -19,11 +19,11 @@
     height: 100vh;
     width: 100vw;
     margin-top: 1px;
-    /* background-color: #cfe7ee; this doesnt work */
 }
 
 .custom-tooltip {
-    color: red !important;
+    color:#7B7D7B !important;
+    font-family: 'Roboto';
 }
 
 .label{
@@ -172,8 +172,8 @@ img {
 .custom-tooltip{
     transition: opacity 1.5s;
     white-space: normal !important;
-    max-width:300px;
-    min-width:100px;
+    max-width:500px;
+    min-width:200px;
 
 }
 
@@ -192,6 +192,8 @@ h2{
 }
 
 #vonnegut{
-    font-family: fantasy;
+    font-family:'Roboto';
+    font-size:x-large;
+    text-align:center
     
 }
