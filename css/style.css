@@ -28,6 +28,8 @@
 
 .label{
     pointer-events: none !important;
+    color: white;
+    font-size: 18px;
 }
 
 /* #openpage {
