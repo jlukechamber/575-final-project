@@ -30,6 +30,7 @@
     pointer-events: none !important;
     color: white;
     font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
     /*text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;*/
 }
 
