@@ -1,7 +1,5 @@
 //initilize map and set center of map with coordinates
 var map2;
-//var myGeoJSON = ("data/region_polygons.geojson");
-
 
 function createmap() {
 
