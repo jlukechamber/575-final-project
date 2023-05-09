@@ -1,7 +1,5 @@
 //initilize map and set center of map with coordinates
 var map2;
-//var myGeoJSON = ("data/region_polygons.geojson");
-
 
 function createmap() {
 
@@ -29,23 +27,7 @@ function createmap() {
 
     getData();
 };
-/*var geojsonLayer = L.geoJSON(myGeoJSON, {
-    onEachFeature: addLabels
- });
- geojsonLayer.addTo(map2);
- //THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
- L.geoJson(map2, {
-     onEachFeature: function(features, layer) {
-       var label = L.marker(layer.getBounds().getCenter(), {
-         icon: L.divIcon({
-           className: "label",
-           html: layer.feature.properties.continent,
-           iconSize: [100, 40]
-         })
-       }).addTo(map2);
-     }
- });
- */
+
 function getData() {
     //load the data--> geojson file can be switched out for mapand.geojson
     fetch("data/region_polygons.geojson")
@@ -67,7 +49,7 @@ function getData() {
                 onEachFeature: onEachFeature
             }).addTo(map2)
         })
-
+//fetching our geojson 
     fetch("data/point.geojson")
         .then(function (response) {
             return response.json();
@@ -82,7 +64,7 @@ function getData() {
                     }
 
                 },
-                
+                //adding labels 
                 onEachFeature: function(features, layer) {
                     var coordinates = features.geometry.coordinates;
                     var latlng = new L.latLng(coordinates[1],coordinates[0])
@@ -99,43 +81,9 @@ function getData() {
 };
 
 
-//Create a GeoJSON layer and add it to the map
-/*var geojsonLayer = L.geoJSON(myGeoJSON, {
-    onEachFeature: addLabels
- });
- geojsonLayer.addTo(map2);
- //THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
- L.geoJson(map2, {
-     onEachFeature: function(features, layer) {
-       var label = L.marker(layer.getBounds().getCenter(), {
-         icon: L.divIcon({
-           className: "label",
-           html: layer.feature.properties.continent,
-           iconSize: [100, 40]
-         })
-       }).addTo(map2);
-     }
- });*/
- 
-  
 
-
-//naur fook 
-// L.geoJSON('data/region_polygons.geojson', {
-//     style: function(properties) {
-//         return {
-//             fillColor: '#e2e4f6',
-//             fillOpacity: '0.8',
-//             weight: 2,
-//             color: '#000'
-//         };
-//     }.addTo(map2)
-// });
-
-
-//can I bind? this to ? maybe an array ? or something not in the geojson 
 function onEachFeature(feature, layer) {
-    //bind hover
+    //bind hover 
     layer.bindTooltip(layer.feature.properties.region, {
         className: "custom-tooltip"
     })
@@ -146,7 +94,7 @@ function onEachFeature(feature, layer) {
             fillColor: '#010901'
         });
     });
-    //currently I just change the fillopactity to match the background but the highlight leaves a snail trail
+//set style for highlighting on map2
     layer.on('mouseout', function (e) {
         e.target.setStyle({
             fillOpacity: 0.8,
@@ -176,151 +124,10 @@ const map = new mapboxgl.Map({
     zoom: 14.5,
     pitch: 0,
     maxBounds: bounds
-    //lessen the pitch but increase the zoom 
+    
 });
 
-//this code is for manually adding layers to the mapbox map
-
-// // Wait until the map has finished loading.
-// map.on('load', () => {
-
-//     const layers = map.getStyle().layers;
-//     // Find the index of the first symbol layer in the map style.
-//     let firstSymbolId;
-//     for (const layer of layers) {
-//         if (layer.type === 'symbol') {
-//             firstSymbolId = layer.id;
-//             break;
-//         }
-//     }
-//     // //add labels
-//     // map.addSource('labels_out', {
-//     //     'type': 'line',
-//     //     'url': 'mapbox://randimaes.clh7u928h1kon2onav58rlb79',
-//     // });
-//     // map.addLayer({
-//     //     'id': 'labels_out',
-//     //     'source': 'labels_out',
-//     //     'type': 'line',
-//     //     'layout': {
-//     //         // Make the layer visible by default.
-//     //         'visibility': 'visible'
-//     //     },
-//     // });
-
-//     // map.addSource('labels_cont', {
-//     //     'type': 'line',
-//     //     'url': 'mapbox://randimaes.clh7nsyu32f722bqjpfjoa1ft',
-//     // });
-//     // map.addLayer({
-//     //     'id': 'labels_cont',
-//     //     'source': 'labels_cont',
-//     //     'type': 'line',
-//     //     'layout': {
-//     //         // Make the layer visible by default.
-//     //         'visibility': 'visible'
-//     //     },
-//     // }, 'labels_out');
-
-
-//     // //add continents   
-//     // map.addSource('continents', {
-//     //     'type': 'fill',
-//     //     'url': 'mapbox://randimaes.clh84t5dr0ifv2apth4kpger0-5wd92',
-//     // });
-//     // map.addLayer({
-//     //     'id': 'continent',
-//     //     'source': 'continent',
-//     //     'type': 'fill',
-//     //     'layout': {
-//     //         // Make the layer visible by default.
-//     //         'visibility': 'visible'
-//     //     },
-//     //     'paint': {
-//     //         'line-color': '#877b59',
-//     //         'line-width': 1
-//     //     }
-//     // }, 'labels_cont');
-
-
-//     //Annika started adding geojsons here
-//     map.addSource('body', {
-//         'type': 'vector',
-//         'url': 'mapbox://randimaes.clhdlywby0gf42bo56qemvoao',
-//     });
-//     map.addLayer({
-//         'id': 'body-fill',
-//         'source': 'body',
-//         'type': 'fill',
-//         'layout': {
-//             // Make the layer visible by default.
-//             'visibility': 'visible',
-//             'line-join': 'round',
-//             'line-cap': 'round',
-//         },
-//         'paint': {
-//             'fill-color': '#ffffff',
-//             'fill-opacity': 0.6
-//         }
-//     }, firstSymbolId);
-
-// });
-// // After the last frame rendered before the map enters an "idle" state.
-// /*
-// map.on('idle', () => {
-//     // If these two layers were not added to the map, abort 
-//     if (!map.getLayer('continent') || !map.getLayer('body') || !map.getLayer('brain') || !map.getLayer('mind') || !map.getLayer('heart') || !map.getLayer('soul') || !map.getLayer('leftbrain') || !map.getLayer('rightbrain')) {
-//         return;
-//     }
-
-//     // Enumerate ids of the layers.
-//     const toggleableLayerIds = ['continent', 'body', 'brain', 'mind', 'heart', 'soul', 'leftbrain', 'rightbrain'];
-
-//     // Set up the corresponding toggle button for each layer.
-//     for (const id of toggleableLayerIds) {
-//         // Skip layers that already have a button set up.
-//         if (document.getElementById(id)) {
-//             continue;
-//         }
-
-//         // Create a link.
-//         const link = document.createElement('a');
-//         link.id = id;
-//         link.href = '#';
-//         link.textContent = id;
-//         link.className = 'active';
-
-//         // Show or hide layer when the toggle is scrolled over.
-//         link.onscroll = function (e) {
-//             const scrolledLayer = this.textContent;
-//             e.preventDefault();
-//             e.stopPropagation();
-
-//             const visibility = map.getLayoutProperty(
-//                 scrolledLayer,
-//                 'visibility'
-//             );
-
-//             // Toggle layer visibility by changing the layout object's visibility property.
-//             if (visibility === 'visible') {
-//                 map.setLayoutProperty(scrolledLayer, 'visibility', 'none');
-//                 //what do I put for className
-//                 this.className = '';
-//             } else {
-//                 this.className = 'active';
-//                 map.setLayoutProperty(
-//                     scrolledLayer,
-//                     'visibility',
-//                     'visible'
-//                 );
-//             }
-//         };
-
-//         const layers = document.getElementById('menu');
-//         layers.appendChild(link);
-//     }
-// });
-// */
+//array with flyto specifications 
 
 const chapters = {
     'blankintro': {
@@ -479,36 +286,6 @@ const chapters = {
         duration: 10000
     }
 };
-//label code doesnt workie
-// function addLabels(feature, layer) {
-//     var label = L.marker(layer.getBounds().getCenter(), {
-//         icon: L.divIcon({
-//             className: 'label',
-//             html: feature.properties.contient
-//         })
-//     });
-//     label.addTo(map2);
-// }
-
-//Create a GeoJSON layer and add it to the map
-/*var geojsonLayer = L.geoJSON(myGeoJSON, {
-  onEachFeature: addLabels
-});
-geojsonLayer.addTo(map2);
-//THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
-L.geoJson(map2, {
-   onEachFeature: function(features, layer) {
-     var label = L.marker(layer.getBounds().getCenter(), {
-       icon: L.divIcon({
-         className: "label",
-         html: layer.feature.properties.continent,
-         iconSize: [100, 40]
-       })
-     }).addTo(map2);
-   }
-});
-*/
-
 
 let activeChapterName = 'blankintro';
 function setActiveChapter(chapterName) {
@@ -519,11 +296,7 @@ function setActiveChapter(chapterName) {
     document.getElementById(chapterName).classList.add('active');
     document.getElementById(activeChapterName).classList.remove('active');
 
-    //code to toggle visibility
-    /*if (chapterName.id){
-        map.setLayoutProperty(chapterName.id,"visibility","visible")
-    }*/
-
+    
     activeChapterName = chapterName;
 }
 
