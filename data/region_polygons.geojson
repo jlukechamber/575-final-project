@@ -1192,7 +1192,7 @@
             "properties": {
                 "OBJECTID": 3,
                 "Shape_Leng": 169746.42526399999,
-                "region": "Me In Others",
+                "region": "Me In Others: 'Everyone is familiar with the slogan--The personal is political--not only that what we experience on a personal level has profound political implications, but that our interior lives, our emotional lives are very much informed by ideology. We oftentimes do the work of the state in and through our interior lives. What we often assume belongs most intimately to ourselves and to our emotional life has been produced elsewhere and has been recruited to do the work of racism and repression.' - Angela Davis",
                 "Shape_Length": 133657.57430820831,
                 "Shape_Area": 957202999.24113929,
                 "continent": "Others"
@@ -1971,7 +1971,7 @@
             "properties": {
                 "OBJECTID": 4,
                 "Shape_Leng": 337313.65505499998,
-                "region": "Ego Will",
+                "region": "Ego Will: 'Let him that would move the world first move himself.'- Socrates",
                 "Shape_Length": 163689.21308117552,
                 "Shape_Area": 931507434.81956553,
                 "continent": "Will"
@@ -8954,7 +8954,7 @@
             "properties": {
                 "OBJECTID": 9,
                 "Shape_Leng": 343892.31312300003,
-                "region": "Unconscious Mind",
+                "region": "Unconscious Mind: 'If absolute truth belongs to anyone in this world, it certainly does not belong to the man or party that claims to possess it.' - Albert Camus",
                 "Shape_Length": 191648.65111630881,
                 "Shape_Area": 1755214727.8824692,
                 "continent": "Unconscious"
@@ -14982,7 +14982,7 @@
             "properties": {
                 "OBJECTID": 17,
                 "Shape_Leng": 337313.65505499998,
-                "region": "Collective Will",
+                "region": "Collective Will: 'We learn the social norms of our society and modify our behaviour accordingly.'- Jane Goodall",
                 "Shape_Length": 206159.13401214153,
                 "Shape_Area": 1242912970.6187878,
                 "continent": "Will"
@@ -15417,7 +15417,7 @@
             "properties": {
                 "OBJECTID": 18,
                 "Shape_Leng": 337313.65505499998,
-                "region": "Anti Ego Will: '[the abject] is simply a frontier, a repulsive gift that the Other, having become alter ego, drops so that the 'I' does not disappear in it but finds, in that sublime alienation, a forfeited existence' - Julia Kristeva",
+                "region": "Anti Ego Will: 'Laws and principles are not for the times when there is no temptation: they are for such moments as this, when body and soul rise in mutiny against their rigour ... If at my convenience I might break them, what would be their worth?'- Charllote Brontë",
                 "Shape_Length": 132111.50793497224,
                 "Shape_Area": 834821667.44737756,
                 "continent": "Will"
@@ -15684,7 +15684,7 @@
             "properties": {
                 "OBJECTID": 19,
                 "Shape_Leng": 169746.42526399999,
-                "region": "Others In Me",
+                "region": "Others In Me:  'Our histories never unfold in isolation. We cannot truly tell what we consider to be our own histories without knowing the other stories. And often we discover that those other stories are actually our own stories.' -Angela Davis",
                 "Shape_Length": 120510.76731816253,
                 "Shape_Area": 909301175.50570285,
                 "continent": "Others"
@@ -17946,7 +17946,7 @@
             "properties": {
                 "OBJECTID": 21,
                 "Shape_Leng": 467060.04570800002,
-                "region": "Authoritative Freedom",
+                "region": "Authoritative Freedom: 'The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.' -Albert Camus",
                 "Shape_Length": 244318.70348367974,
                 "Shape_Area": 2014747652.9738312,
                 "continent": "Freedom"
