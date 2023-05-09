@@ -229,6 +229,10 @@ img {
     font-size: 12pt;
 }
 
+.aipics{
+    display: center;
+}
+
 h2 {
     font-family: 'Montchauve';
     font-size: 48pt;
@@ -240,3 +244,5 @@ h2 {
     text-align:center
     
 }
+
+
