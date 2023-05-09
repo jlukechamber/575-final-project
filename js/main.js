@@ -14,7 +14,7 @@ function createmap() {
     });
 
     //add the openstreet map tilelayer
-    var OpenStreetMap_Mapnik = L.tileLayer('https://api.mapbox.com/styles/v1/randimaes/clhdjdvpd024j01qm1j8u7ckt/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA', {
+    var OpenStreetMap_Mapnik = L.tileLayer('https://api.mapbox.com/styles/v1/randimaes/clhf6m9bh008001qn98oy3z17/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA', {
         maxZoom: 19,
         //attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         accessToken: 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA'
@@ -22,7 +22,23 @@ function createmap() {
 
     getData();
 };
-
+/*var geojsonLayer = L.geoJSON(myGeoJSON, {
+    onEachFeature: addLabels
+ });
+ geojsonLayer.addTo(map2);
+ //THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
+ L.geoJson(map2, {
+     onEachFeature: function(features, layer) {
+       var label = L.marker(layer.getBounds().getCenter(), {
+         icon: L.divIcon({
+           className: "label",
+           html: layer.feature.properties.continent,
+           iconSize: [100, 40]
+         })
+       }).addTo(map2);
+     }
+ });
+ */
 function getData() {
     //load the data--> geojson file can be switched out for mapand.geojson
     fetch("data/region_polygons.geojson")
@@ -33,19 +49,68 @@ function getData() {
             var layer = L.geoJson(json, {
                 style: function (feature) {
                     return {
-                        fillColor: '#e2e4f6',
-                        fillOpacity: 0.5,
-                        weight: 2,
-                        color: '#e98e88',
-
+                        fillColor: '#BFC4BF',
+                        fillOpacity: 0.8,
+                        weight: 1.5,
+                        color: '#FFFFFF',
+                         
                     }
 
                 },
                 onEachFeature: onEachFeature
             }).addTo(map2)
         })
+
+    fetch("data/point.geojson")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (json) {
+            var layer = L.geoJson(json, {
+                interactive:false,
+                style: function (feature) {
+                    return {
+                        opacity: 0,
+                        fillOpacity: 0
+                    }
+
+                },
+                
+                onEachFeature: function(features, layer) {
+                    var coordinates = features.geometry.coordinates;
+                    var latlng = new L.latLng(coordinates[1],coordinates[0])
+                    var label = L.marker(latlng, {
+                      icon: L.divIcon({
+                        className: "label " + layer.feature.properties.name,
+                        html: layer.feature.properties.name,
+                        iconSize: [100, 40]
+                      })
+                    }).addTo(map2);
+                }
+            })
+        })
 };
 
+
+//Create a GeoJSON layer and add it to the map
+/*var geojsonLayer = L.geoJSON(myGeoJSON, {
+    onEachFeature: addLabels
+ });
+ geojsonLayer.addTo(map2);
+ //THIS CREATES LABELS FOR MAP2 --> map2 is not the correct variable to call but I am not sure what the correct variable/function to call is
+ L.geoJson(map2, {
+     onEachFeature: function(features, layer) {
+       var label = L.marker(layer.getBounds().getCenter(), {
+         icon: L.divIcon({
+           className: "label",
+           html: layer.feature.properties.continent,
+           iconSize: [100, 40]
+         })
+       }).addTo(map2);
+     }
+ });*/
+ 
+  
 
 
 //naur fook 
@@ -61,25 +126,24 @@ function getData() {
 // });
 
 
+//can I bind? this to ? maybe an array ? or something not in the geojson 
 function onEachFeature(feature, layer) {
     //bind hover
     layer.bindTooltip(layer.feature.properties.region, {
         className: "custom-tooltip"
-        //I think in this section we need to add the info within the popup
-        //no
     })
 
     layer.on('mouseover', function (e) {
         e.target.setStyle({
             fillOpacity: 0.8,
-            fillColor: '#e1f89c'
+            fillColor: '#010901'
         });
     });
     //currently I just change the fillopactity to match the background but the highlight leaves a snail trail
     layer.on('mouseout', function (e) {
         e.target.setStyle({
             fillOpacity: 0.8,
-            fillColor: '#e2e4f6'
+            fillColor: '#BFC4BF'
 
         });
     });
@@ -93,7 +157,7 @@ document.addEventListener('DOMContentLoaded', createmap)
 mapboxgl.accessToken = 'pk.eyJ1IjoicmFuZGltYWVzIiwiYSI6ImNsYTJveDBuMzBqOTkzcG1oZ3dyNXE5ZjEifQ.KopBuoAxGQO2d1NO_sNSOA';
 var bounds = [
     [-156.184, 35.075],
-    [-150.72115, 37.78104],
+    [-148.72115, 37.78104],
 
 ];
 //create the map
@@ -459,7 +523,7 @@ function setActiveChapter(chapterName) {
 function isElementOnScreen(id) {
     const element = document.getElementById(id);
     const bounds = element.getBoundingClientRect();
-    return bounds.top < window.innerHeight && bounds.bottom > 0;
+    return bounds.top < (window.innerHeight/2) && bounds.bottom > 0;
 }
 
 // On every scroll event, check which element is on screen

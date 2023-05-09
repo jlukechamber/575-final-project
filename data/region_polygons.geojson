@@ -410,7 +410,7 @@
             "properties": {
                 "OBJECTID": 1,
                 "Shape_Leng": 333669.80940199998,
-                "region": "Altruistic Ego",
+                "region": "Altruistic Ego: 'We have so far to go to realize our human potential for compassion, altruism, and love' - Jane Goodall",
                 "Shape_Length": 200829.87672300907,
                 "Shape_Area": 2393854844.2464385,
                 "continent": "Ego"
@@ -5893,7 +5893,7 @@
             "properties": {
                 "OBJECTID": 6,
                 "Shape_Leng": 423354.5184,
-                "region": "I",
+                "region": "I as Myself: 'Christianity is spirit, spirit is inwardness, inwardness is subjectivity, subjectivity is essentially passion, and in its maximum an infinite personal, passionate interest in one’s eternal happiness' -Soren Kierkegaard ",
                 "Shape_Length": 307265.51888666442,
                 "Shape_Area": 3482372111.6561904,
                 "continent": "Subjectivity"
@@ -8323,7 +8323,7 @@
             "properties": {
                 "OBJECTID": 8,
                 "Shape_Leng": 421641.883524,
-                "region": "In Itself",
+                "region": "In Itself: 'There are in each of us, two consciences: one which is common to our group in its entirety, which, consequently, is not ourself, but society living and acting within us; the other, on the contrary, represents that in us which is personal and distinct, that which makes us an individual. Solidarity which comes from likeness is at its maximum when the collective conscience completely envelops our whole conscience and coincides in all points with it' -Emile Durkheim",
                 "Shape_Length": 327295.36058567284,
                 "Shape_Area": 3952916038.9051456,
                 "continent": "Consciousness"
@@ -10657,7 +10657,7 @@
             "properties": {
                 "OBJECTID": 10,
                 "Shape_Leng": 656558.075954,
-                "region": "Empirical Body: Now he has departed from this strange world a little ahead of me. That means nothing. People like us, who believe in physics, know that the distinction between past, present, and future is only a stubbornly persistent illusion",
+            "region": "Empirical Body: 'Now he has departed from this strange world a little ahead of me. That means nothing. People like us, who believe in physics, know that the distinction between past, present, and future is only a stubbornly persistent illusion' - Albert Einstein ",
                 "Shape_Length": 359416.24969178048,
                 "Shape_Area": 1766527504.2402911,
                 "continent": "Body"
@@ -11772,7 +11772,7 @@
             "properties": {
                 "OBJECTID": 11,
                 "Shape_Leng": 421641.883524,
-                "region": "Of Itself",
+                "region": "Of Itself: 'Consciousness is a being the nature of which is to be conscious of the nothingness of its being' -Jean-Paul Sartre ",
                 "Shape_Length": 336065.41383045551,
                 "Shape_Area": 3756729779.7038689,
                 "continent": "Consciousness"
@@ -12627,7 +12627,7 @@
             "properties": {
                 "OBJECTID": 12,
                 "Shape_Leng": 423354.5184,
-                "region": "Me",
+                "region": "Me as a Person: 'Skepticism is thus a resting-place for human reason, where it can reflect upon its dogmatic wanderings and make survey of the region in which it finds itself, so that for the future it may be able to choose its path with more certainty.' - Immanuel Kant",
                 "Shape_Length": 239959.41174317888,
                 "Shape_Area": 2345825626.7966905,
                 "continent": "Subjectivity"
@@ -13178,7 +13178,7 @@
             "properties": {
                 "OBJECTID": 13,
                 "Shape_Leng": 333669.80940199998,
-                "region": "Selfish Ego",
+                "region": "Selfish Ego: 'In this way the ego detaches itself from the external world. It is more correct to say: Originally the ego includes everything, later it detaches from itself the external world. The ego-feeling we are aware of now is thus only a shrunken vestige of a far more extensive feeling - a feeling which embraced the universe and expressed an inseparable connection of the ego with the external world' - Sigmund Freud",
                 "Shape_Length": 227536.83453873935,
                 "Shape_Area": 1938616163.0669138,
                 "continent": "Ego"
@@ -15417,7 +15417,7 @@
             "properties": {
                 "OBJECTID": 18,
                 "Shape_Leng": 337313.65505499998,
-                "region": "Anti Ego Will",
+                "region": "Anti Ego Will: '[the abject] is simply a frontier, a repulsive gift that the Other, having become alter ego, drops so that the 'I' does not disappear in it but finds, in that sublime alienation, a forfeited existence' - Julia Kristeva",
                 "Shape_Length": 132111.50793497224,
                 "Shape_Area": 834821667.44737756,
                 "continent": "Will"

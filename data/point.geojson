@@ -1,0 +1,177 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "body2": 0,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -153.920,
+                    35.725
+
+                    
+                ]
+            },
+            "properties": {
+                "FID": 0,
+                "Shape_Leng": 333669.80940199998,
+                "Shape_Area": 4332471006.7700005,
+                "name": "body"
+            }
+        },
+        {
+            "type": "Feature",
+            "conscious2": 1,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -153.315,
+                    36.15
+                ]
+            },
+            "properties": {
+                "FID": 1,
+                "Shape_Leng": 333669.80940199998,
+                "Shape_Area": 4332471006.7700005,
+                "name": "conscious"
+            }
+        },
+        {
+            "type": "Feature",
+            "subjectivity2": 2,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -152.61,
+                    36.68
+                ]
+            },
+            "properties": {
+                "FID": 2,
+                "Shape_Leng": 333669.80940199998,
+                "Shape_Area": 4332471006.7700005,
+                "name": "subjectivity"
+            }
+        },
+        {
+            "type": "Feature",
+            "ego2": 3,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -151.49,
+                    36.49
+                ]
+            },
+            "properties": {
+                "FID": 3,
+                "Shape_Leng": 333669.80940199998,
+                "Shape_Area": 4332471006.7700005,
+                "name": "ego"
+            }
+        },
+        {
+            "type": "Feature",
+            "antiego2": 4,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -151.012,
+                    35.94
+                ]
+            },
+            "properties": {
+                "FID": 4,
+                "Shape_Leng": 333669.80940199998,
+                "Shape_Area": 4332471006.7700005,
+                "name": "antiego"
+            }
+        },
+        {
+            "type": "Feature",
+            "others2": 5,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -151.012,
+                    35.444
+                ]
+            },
+            "properties": {
+                "FID": 5,
+                "Shape_Leng": 333669.80940199998,
+                "Shape_Area": 4332471006.7700005,
+                "name": "others"
+            }
+        },
+        {
+            "type": "Feature",
+            "will2": 6,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -151.388,
+                    35.821
+                ]
+            },
+            "properties": {
+                "FID": 6,
+                "Shape_Leng": 333669.80940199998,
+                "Shape_Area": 4332471006.7700005,
+                "name": "will"
+            }
+        },
+        {
+            "type": "Feature",
+            "freedom2": 7,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -152.333,
+                    36.09
+                ]
+            },
+            "properties": {
+                "FID": 7,
+                "Shape_Leng": 333669.80940199998,
+                "Shape_Area": 4332471006.7700005,
+                "name": "freedom"
+            }
+        },
+        {
+            "type": "Feature",
+            "unconscious2": 8,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -153.345,
+                    35.5
+                ]
+            },
+            "properties": {
+                "FID": 8,
+                "Shape_Leng": 333669.80940199998,
+                "Shape_Area": 4332471006.7700005,
+                "name": "unconscious"
+            }
+        },
+        {
+            "type": "Feature",
+            "objectivity2": 9,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -152.401,
+                    35.65
+                ]
+            },
+            "properties": {
+                "FID": 9,
+                "Shape_Leng": 333669.80940199998,
+                "Shape_Area": 4332471006.7700005,
+                "name": "objectivity"
+            }
+        }
+    ]
+}
