@@ -189,6 +189,7 @@ p {
     text-align: justify;
     font-family: 'Roboto';
     font-weight: 100;
+    font-size: 12pt;
 }
 
 h3 {
@@ -219,6 +220,8 @@ img {
     display: table;
     font-family: 'Roboto';
     font-weight: 100;
+    text-align: justify;
+    font-size: 12pt;
 }
 
 h2 {

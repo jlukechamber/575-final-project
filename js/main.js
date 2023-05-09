@@ -166,7 +166,7 @@ const map = new mapboxgl.Map({
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/randimaes/clh418hoa019301p477eg0jbm',
     center: [-152.63723, 35.968111],
-    zoom: 15,
+    zoom: 14.5,
     pitch: 0,
     maxBounds: bounds
     //lessen the pitch but increase the zoom 
@@ -318,7 +318,7 @@ const map = new mapboxgl.Map({
 const chapters = {
     'blankintro': {
         center: [-152.63723, 35.968111],
-        zoom: 15,
+        zoom: 14.5,
         pitch: 0,
         bearing: 0,
         duration: 5000,
