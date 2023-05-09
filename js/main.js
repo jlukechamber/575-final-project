@@ -5,12 +5,19 @@ var map2;
 
 function createmap() {
 
+    //define map bounds
+    var bounds = L.latLngBounds(
+        L.latLng(36.675,-158.119),
+        L.latLng(35.289,-148.197)
+    );
+
     map2 = L.map('map2', {
         center: [36.1755150, -152.4691482],
         zoom: 8,
         scrollWheelZoom: false,
         minZoom: 8,
-        maxZoom: 15
+        maxZoom: 15,
+        maxBounds: bounds,
     });
 
     //add the openstreet map tilelayer
