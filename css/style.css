@@ -68,8 +68,7 @@
     text-shadow: 0.5px 0.5px 0 #d0e068, -0.5px -0.5px 0 #d0e068, 0.5px -0.5px 0 #d0e068, -0.5px 0.5px 0 #d0e068;
 }
 
-
-body {
+.body {
     margin: 0;
     padding: 0;
 }
